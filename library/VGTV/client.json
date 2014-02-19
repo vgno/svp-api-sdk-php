@@ -1,0 +1,172 @@
+{
+    "operations": {
+        "categories.fetchAll": {
+            "httpMethod": "GET",
+            "uri": "{clientId}/categories",
+            "description": "Get collection of categories",
+            "parameters": {
+                "clientId": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                }
+            }
+        },
+
+        "categories.fetch": {
+            "httpMethod": "GET",
+            "uri": "{clientId}/categories/{categoryId}",
+            "description": "Get category by ID",
+            "parameters": {
+                "clientId": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                },
+                "categoryId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
+
+        "categories.fetchVideos": {
+            "httpMethod": "GET",
+            "uri": "{clientId}/categories/{categoryId}/videos",
+            "description": "Get category by ID with videos collection",
+            "parameters": {
+                "clientId": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                },
+                "categoryId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false
+                },
+                "page": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false
+                }
+            }
+        },
+
+        "mostSeen": {
+            "httpMethod": "GET",
+            "uri": "{clientId}/videos/most-seen",
+            "description": "Get collection of most seen videos",
+            "parameters": {
+                "clientId": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                },
+                "interval": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false,
+                    "description": "Specifies the window of time to evaluate.: hour|day|week|month"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false
+                },
+                "filter": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false,
+                    "description": "Filter list in the format of key::value. Each filter has to be separated by | sign. <br /><br /><b>Available filters:</b><br />categoryId<br /><br /><b>Example:</b><br />categoryId::139"
+                }
+            }
+        },
+
+        "search": {
+            "httpMethod": "GET",
+            "uri": "{clientId}/search",
+            "description": "Get searching result",
+            "parameters": {
+                "clientId": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                },
+                "query": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false
+                },
+                "page": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false
+                }
+            }
+        },
+
+        "videos.fetchAll": {
+            "httpMethod": "GET",
+            "uri": "{clientId}/videos",
+            "description": "Get collection of videos",
+            "parameters": {
+                "clientId": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false
+                },
+                "filter": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false,
+                    "description": "Filter list in the format of key::value. Each filter has to be separated by | sign. <br /><br /><b>Available filters:</b><br />categoryId<br /><br /><b>Example:</b><br />categoryId::139"
+                },
+                "page": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false
+                }
+            }
+        },
+
+        "videos.fetch": {
+            "httpMethod": "GET",
+            "uri": "{clientId}/videos/{videoId}",
+            "description": "Find a video by videoId",
+            "parameters": {
+                "clientId": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                },
+                "videoId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                },
+                "additional": {
+                    "location": "query",
+                    "type": "string",
+                    "required": false
+                }
+            }
+        }
+    }
+}
