@@ -44,15 +44,184 @@ class Client extends ServiceClient {
     const CLIENT_APP_ID = 'PHP Client v1';
 
     /**
+     * Fetch all categories for the client
+     *
+     * @param array $options
+     */
+    public function fetchCategories(array $options = array()) {
+        return $this->runCommand(
+            'categories.fetchAll',
+            array(),
+            $options
+        );
+    }
+
+    /**
+     * Fetch a single category for the client based on $categoryId
+     *
+     * @param integer $categoryId
+     * @param array   $options
+     */
+    public function fetchCategory($categoryId, array $options = array()) {
+        return $this->runCommand(
+            'categories.fetch',
+            array(
+                'categoryId' => $categoryId
+            ),
+            $options
+        );
+    }
+
+    /**
+     * Fetch videos for a single category for the client based on $categoryId
+     *
+     * @param integer $categoryId
+     * @param integer $limit
+     * @param integer $page
+     * @param array   $options
+     */
+    public function fetchCategoryVideos($categoryId, $limit = null, $page = null, array $options = array()) {
+        $defaultOptions = array('categoryId' => $categoryId);
+
+        if ($limit) {
+            $defaultOptions['limit'] = $limit;
+        }
+
+        if ($page) {
+            $defaultOptions['page'] = $page;
+        }
+
+        return $this->runCommand(
+            'categories.fetchVideos',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
+     * Fetch videos for a single category for the client based on $categoryId
+     *
+     * @param string  $inteval
+     * @param integer $limit
+     * @param string  $filter
+     * @param array   $options
+     */
+    public function fetchMostSeen($interval = null, $limit = null, $filter = null, array $options = array()) {
+        $defaultOptions = array();
+
+        if ($interval) {
+            $defaultOptions['interval'] = $interval;
+        }
+
+        if ($limit) {
+            $defaultOptions['limit'] = $limit;
+        }
+
+        if ($filter) {
+            $defaultOptions['filter'] = $filter;
+        }
+
+        return $this->runCommand(
+            'mostSeen',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
+     * Search for videos for a given client
+     *
+     * @param string  $query
+     * @param integer $limit
+     * @param integer $page
+     * @param array   $options
+     */
+    public function search($query, $limit = null, $page = null, array $options = array()) {
+        $defaultOptions = array('query' => $query);
+
+        if ($limit) {
+            $defaultOptions['limit'] = $limit;
+        }
+
+        if ($page) {
+            $defaultOptions['page'] = $page;
+        }
+
+        return $this->runCommand(
+            'search',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
+     * Fetch videos for a given client
+     *
+     * @param integer $limit
+     * @param integer $page
+     * @param string  $filter
+     * @param array   $options
+     */
+    public function fetchVideos($limit = null, $page = null, $filter = null, array $options = array()) {
+        $defaultOptions = array('query' => $query);
+
+        if ($limit) {
+            $defaultOptions['limit'] = $limit;
+        }
+
+        if ($page) {
+            $defaultOptions['page'] = $page;
+        }
+
+        if ($filter) {
+            $defaultOptions['filter'] = $filter;
+        }
+
+        return $this->runCommand(
+            'videos.fetchAll',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
+     * Fetch videos for a given client
+     *
+     * @param integer $limit
+     * @param integer $page
+     * @param string  $filter
+     * @param array   $options
+     */
+    public function fetchVideo($videoId, $additional = null, array $options = array()) {
+        $defaultOptions = array('videoId' => $videoId);
+
+        if ($additional) {
+            $defaultOptions['additional'] = $additional;
+        }
+
+        return $this->runCommand(
+            'videos.fetch',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
      * Factory method to create a new client.
      *
      * @param  array|Collection $config Configuration data
+     * @param  $clientId
      * @return Client
      */
     public static function factory($config = array()) {
+        $clientId = (isset($config['clientId']) ? $config['clientId'] : '');
+
         $defaults = array(
-            'apiUrl'     => self::API_URL,
-            'apiVersion' => self::API_VERSION
+            'apiUrl'          => self::API_URL,
+            'apiVersion'      => self::API_VERSION,
+            'command.params' => array(
+                'clientId' => $clientId
+            )
         );
 
         $required = array(
@@ -104,6 +273,5 @@ class Client extends ServiceClient {
             $request = $command->getRequest();
 
             $request->addHeader('X-SVA-Client', self::CLIENT_APP_ID);
-            $request->addHeader('clientId', $this->getConfig('clientId'));
         }
 }
