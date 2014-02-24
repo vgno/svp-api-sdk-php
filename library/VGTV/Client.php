@@ -233,10 +233,9 @@ class Client extends ServiceClient {
         $config = Collection::fromConfig($config, $defaults, $required);
         $client = new self($config->get('apiUrl') . '/v' . $config->get('apiVersion'), $config);
 
-        // Add service name and token headers
-        $dispatcher = $client->getEventDispatcher();
-
-        $dispatcher->addListener('command.before_send', array($client, 'beforeSendEvent'));
+        // Set default headers
+        $client->setDefaultOption('headers/Accept', 'application/json');
+        $client->setDefaultOption('headers/X-SVA-Client', self::CLIENT_APP_ID);
 
         // Attach a service description to the client
         $description = ServiceDescription::factory(__DIR__ . '/client.json');
@@ -254,8 +253,6 @@ class Client extends ServiceClient {
      * @return mixed
      */
     protected function runCommand($command, array $defaultOptions = array(), array $options = array()) {
-        $options['debug'] = true;
-
         $command = $this->getCommand($command, array_merge(
             $defaultOptions,
             $options
@@ -263,20 +260,5 @@ class Client extends ServiceClient {
 
         $command->execute();
         return $command->getResult();
-    }
-
-    /**
-     * Listener for the command.before_send event, adding a token header and a service name
-     * header to the request for validation service side.
-     *
-     * @param Event $event
-     * @return void
-     */
-    public function beforeSendEvent(Event $event) {
-        $command = $event['command'];
-        $request = $command->getRequest();
-
-        $request->addHeader('Accept', 'application/json');
-        $request->addHeader('X-SVA-Client', self::CLIENT_APP_ID);
     }
 }
