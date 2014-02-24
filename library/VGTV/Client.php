@@ -41,7 +41,7 @@ class Client extends ServiceClient {
      *
      * @var string
      */
-    const CLIENT_APP_ID = 'PHP Client v1';
+    const CLIENT_APP_ID = 'PHP-Client-v1';
 
     /**
      * Fetch all categories for the client
@@ -73,14 +73,14 @@ class Client extends ServiceClient {
     }
 
     /**
-     * Fetch videos for a single category for the client based on $categoryId
+     * Fetch assets for a single category for the client based on $categoryId
      *
      * @param integer $categoryId
      * @param integer $limit
      * @param integer $page
      * @param array   $options
      */
-    public function fetchCategoryVideos($categoryId, $limit = null, $page = null, array $options = array()) {
+    public function fetchCategoryAssets($categoryId, $limit = null, $page = null, array $options = array()) {
         $defaultOptions = array('categoryId' => $categoryId);
 
         if ($limit) {
@@ -92,14 +92,14 @@ class Client extends ServiceClient {
         }
 
         return $this->runCommand(
-            'categories.fetchVideos',
+            'categories.fetchAssets',
             $defaultOptions,
             $options
         );
     }
 
     /**
-     * Fetch videos for a single category for the client based on $categoryId
+     * Fetch assets for a single category for the client based on $categoryId
      *
      * @param string  $inteval
      * @param integer $limit
@@ -129,7 +129,7 @@ class Client extends ServiceClient {
     }
 
     /**
-     * Search for videos for a given client
+     * Search for assets for a given client
      *
      * @param string  $query
      * @param integer $limit
@@ -155,15 +155,15 @@ class Client extends ServiceClient {
     }
 
     /**
-     * Fetch videos for a given client
+     * Fetch assets for a given client
      *
      * @param integer $limit
      * @param integer $page
      * @param string  $filter
      * @param array   $options
      */
-    public function fetchVideos($limit = null, $page = null, $filter = null, array $options = array()) {
-        $defaultOptions = array('query' => $query);
+    public function fetchAssets($limit = null, $page = null, $filter = null, array $options = array()) {
+        $defaultOptions = array();
 
         if ($limit) {
             $defaultOptions['limit'] = $limit;
@@ -178,29 +178,29 @@ class Client extends ServiceClient {
         }
 
         return $this->runCommand(
-            'videos.fetchAll',
+            'assets.fetchAll',
             $defaultOptions,
             $options
         );
     }
 
     /**
-     * Fetch videos for a given client
+     * Fetch assets for a given client
      *
      * @param integer $limit
      * @param integer $page
      * @param string  $filter
      * @param array   $options
      */
-    public function fetchVideo($videoId, $additional = null, array $options = array()) {
-        $defaultOptions = array('videoId' => $videoId);
+    public function fetchAsset($assetId, $additional = null, array $options = array()) {
+        $defaultOptions = array('assetId' => $assetId);
 
         if ($additional) {
             $defaultOptions['additional'] = $additional;
         }
 
         return $this->runCommand(
-            'videos.fetch',
+            'assets.fetch',
             $defaultOptions,
             $options
         );
@@ -234,7 +234,9 @@ class Client extends ServiceClient {
         $client = new self($config->get('apiUrl') . '/v' . $config->get('apiVersion'), $config);
 
         // Add service name and token headers
-        $client->getEventDispatcher()->addListener('command.before_send', array($client, 'beforeSendEvent'));
+        $dispatcher = $client->getEventDispatcher();
+
+        $dispatcher->addListener('command.before_send', array($client, 'beforeSendEvent'));
 
         // Attach a service description to the client
         $description = ServiceDescription::factory(__DIR__ . '/client.json');
@@ -252,6 +254,8 @@ class Client extends ServiceClient {
      * @return mixed
      */
     protected function runCommand($command, array $defaultOptions = array(), array $options = array()) {
+        $options['debug'] = true;
+
         $command = $this->getCommand($command, array_merge(
             $defaultOptions,
             $options
@@ -269,9 +273,10 @@ class Client extends ServiceClient {
      * @return void
      */
     public function beforeSendEvent(Event $event) {
-            $command = $event['command'];
-            $request = $command->getRequest();
+        $command = $event['command'];
+        $request = $command->getRequest();
 
-            $request->addHeader('X-SVA-Client', self::CLIENT_APP_ID);
-        }
+        $request->addHeader('Accept', 'application/json');
+        $request->addHeader('X-SVA-Client', self::CLIENT_APP_ID);
+    }
 }

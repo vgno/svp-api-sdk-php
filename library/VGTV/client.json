@@ -95,7 +95,7 @@
         "categories.fetchAssets": {
             "httpMethod": "GET",
             "uri": "{clientId}/categories/{categoryId}/assets",
-            "description": "Get category by ID with videos collection",
+            "description": "Get category by ID with assets collection",
             "parameters": {
                 "clientId": {
                     "location": "uri",
@@ -122,7 +122,7 @@
 
         "mostSeen": {
             "httpMethod": "GET",
-            "uri": "{clientId}/videos/most-seen",
+            "uri": "{clientId}/assets/most-seen",
             "description": "Get collection of most seen assets",
             "parameters": {
                 "clientId": {
@@ -209,15 +209,15 @@
 
         "assets.fetch": {
             "httpMethod": "GET",
-            "uri": "{clientId}/assets/{videoId}",
-            "description": "Find an asset by videoId",
+            "uri": "{clientId}/assets/{assetId}",
+            "description": "Find an asset by assetId",
             "parameters": {
                 "clientId": {
                     "location": "uri",
                     "type": "string",
                     "required": true
                 },
-                "videoId": {
+                "assetId": {
                     "location": "uri",
                     "type": "integer",
                     "required": true
