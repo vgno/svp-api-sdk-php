@@ -13,6 +13,34 @@
             }
         },
 
+        "categories.create": {
+            "httpMethod": "POST",
+            "uri": "{clientId}/categories",
+            "description": "Creates and returns a category",
+            "parameters": {
+                "clientId": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                },
+                "id": {
+                    "location": "json",
+                    "type": "integer",
+                    "required": true
+                },
+                "title": {
+                    "location": "json",
+                    "type": "string",
+                    "required": true
+                },
+                "parentId": {
+                    "location": "json",
+                    "type": "integer",
+                    "required": false
+                }
+            }
+        },
+
         "categories.fetch": {
             "httpMethod": "GET",
             "uri": "{clientId}/categories/{categoryId}",
@@ -31,9 +59,42 @@
             }
         },
 
-        "categories.fetchVideos": {
+        "categories.update": {
+            "httpMethod": "PUT",
+            "uri": "{clientId}/categories",
+            "description": "Creates and returns a category",
+            "parameters": {
+                "clientId": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                },
+                "categoryId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                },
+                "id": {
+                    "location": "json",
+                    "type": "integer",
+                    "required": true
+                },
+                "title": {
+                    "location": "json",
+                    "type": "string",
+                    "required": true
+                },
+                "parentId": {
+                    "location": "json",
+                    "type": "integer",
+                    "required": false
+                }
+            }
+        },
+
+        "categories.fetchAssets": {
             "httpMethod": "GET",
-            "uri": "{clientId}/categories/{categoryId}/videos",
+            "uri": "{clientId}/categories/{categoryId}/assets",
             "description": "Get category by ID with videos collection",
             "parameters": {
                 "clientId": {
@@ -62,7 +123,7 @@
         "mostSeen": {
             "httpMethod": "GET",
             "uri": "{clientId}/videos/most-seen",
-            "description": "Get collection of most seen videos",
+            "description": "Get collection of most seen assets",
             "parameters": {
                 "clientId": {
                     "location": "uri",
@@ -117,10 +178,10 @@
             }
         },
 
-        "videos.fetchAll": {
+        "assets.fetchAll": {
             "httpMethod": "GET",
-            "uri": "{clientId}/videos",
-            "description": "Get collection of videos",
+            "uri": "{clientId}/assets",
+            "description": "Get collection of assets",
             "parameters": {
                 "clientId": {
                     "location": "uri",
@@ -146,10 +207,10 @@
             }
         },
 
-        "videos.fetch": {
+        "assets.fetch": {
             "httpMethod": "GET",
-            "uri": "{clientId}/videos/{videoId}",
-            "description": "Find a video by videoId",
+            "uri": "{clientId}/assets/{videoId}",
+            "description": "Find an asset by videoId",
             "parameters": {
                 "clientId": {
                     "location": "uri",
