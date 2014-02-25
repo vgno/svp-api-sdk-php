@@ -1,6 +1,7 @@
 {
     "name": "vgtv/vgtv-client-php",
     "description": "PHP client for the VGTV API",
+    "homepage": "https://github.com/vgnett/vgtv-client-php",
     "authors": [
         {
             "name": "Kristoffer Brabrand",
