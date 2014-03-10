@@ -1,7 +1,7 @@
 {
     "name": "svp/api-sdk-php",
     "description": "PHP client for the Schibsted Video Platform API",
-    "homepage": "https://github.com/vgnett/vgtv-client-php",
+    "homepage": "https://github.com/vgnett/svp-api-sdk-php",
     "authors": [
         {
             "name": "Kristoffer Brabrand",
