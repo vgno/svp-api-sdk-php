@@ -1,17 +1,17 @@
 <?php
 /**
- * This file is part of the VGTV API PHP client package
+ * This file is part of the SVP API PHP client package
  *
  * @author Kristoffer Brabrand <kristoffer.brabrand@vg.no>
  * @copyright VG
  */
 
-namespace VGTV;
+namespace SVP;
 
 use Guzzle\Common\Exception\GuzzleException;
 
 /**
- * VGTV API client exception
+ * SVP API client exception
  *
  * @author Kristoffer Brabrand <kristoffer.brabrand@vg.no>
  * @copyright VG

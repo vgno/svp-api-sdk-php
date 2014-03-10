@@ -1,6 +1,6 @@
 {
-    "name": "vgtv/vgtv-client-php",
-    "description": "PHP client for the VGTV API",
+    "name": "svp/api-sdk-php",
+    "description": "PHP client for the Schibsted Video Platform API",
     "homepage": "https://github.com/vgnett/vgtv-client-php",
     "authors": [
         {
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-0": {
-            "VGTV": "library"
+            "SVP": "library"
         }
     }
 }

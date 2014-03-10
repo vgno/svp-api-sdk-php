@@ -1,12 +1,12 @@
 <?php
 /**
- * This file is part of the VGTV API PHP client package
+ * This file is part of the SVP API PHP client package
  *
  * @author Kristoffer Brabrand <kristoffer.brabrand@vg.no>
  * @copyright VG
  */
 
-namespace VGTV;
+namespace SVP;
 
 use Guzzle\Http\Client as HttpClient,
     Guzzle\Common\Collection,
@@ -15,13 +15,12 @@ use Guzzle\Http\Client as HttpClient,
     Guzzle\Common\Event;
 
 /**
- * VGTV API client
+ * SVP API client
  *
  * @author Kristoffer Brabrand <kristoffer.brabrand@vg.no>
  * @copyright VG
  */
 class Client extends ServiceClient {
-
     /**
      * API base URL
      *
