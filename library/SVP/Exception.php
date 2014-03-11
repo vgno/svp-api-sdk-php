@@ -16,4 +16,4 @@ use Guzzle\Common\Exception\GuzzleException;
  * @author Kristoffer Brabrand <kristoffer.brabrand@vg.no>
  * @copyright VG
  */
-class Exception extends GuzzleException {}
+class Exception extends \Exception implements GuzzleException {}
