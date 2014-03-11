@@ -23,11 +23,6 @@
                     "type": "string",
                     "required": true
                 },
-                "id": {
-                    "location": "json",
-                    "type": "integer",
-                    "required": true
-                },
                 "title": {
                     "location": "json",
                     "type": "string",

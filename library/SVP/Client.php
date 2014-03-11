@@ -88,6 +88,20 @@ class Client extends ServiceClient {
     }
 
     /**
+     * Create a category for the client based on $categoryData
+     *
+     * @param array $categoryData array containing title of the category and optional parentId
+     * @param array   $options
+     */
+    public function createCategory(array $categoryData, array $options = array()) {
+        return $this->runCommand(
+            'categories.create',
+            $categoryData,
+            $options
+        );
+    }
+
+    /**
      * Fetch assets for a single category for the client based on $categoryId
      *
      * @param integer $categoryId
