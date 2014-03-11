@@ -72,6 +72,22 @@ class Client extends ServiceClient {
     }
 
     /**
+     * Update a single category for the client based on $categoryId and $categoryData
+     *
+     * @param integer $categoryId
+     * @param array $categoryData array containing title of the category and optional parentId
+     * @param array   $options
+     */
+    public function updateCategory($categoryId, array $categoryData, array $options = array()) {
+        $categoryData['categoryId'] = $categoryId;
+        return $this->runCommand(
+            'categories.update',
+            $categoryData,
+            $options
+        );
+    }
+
+    /**
      * Fetch assets for a single category for the client based on $categoryId
      *
      * @param integer $categoryId

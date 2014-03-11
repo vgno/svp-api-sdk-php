@@ -61,7 +61,7 @@
 
         "categories.update": {
             "httpMethod": "PUT",
-            "uri": "{clientId}/categories",
+            "uri": "{clientId}/categories/{categoryId}",
             "description": "Creates and returns a category",
             "parameters": {
                 "clientId": {
@@ -71,11 +71,6 @@
                 },
                 "categoryId": {
                     "location": "uri",
-                    "type": "integer",
-                    "required": true
-                },
-                "id": {
-                    "location": "json",
                     "type": "integer",
                     "required": true
                 },
