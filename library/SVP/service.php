@@ -2,7 +2,6 @@
 return array(
     'name' => 'svp/api-sdk-php',
     'apiVersion' => '1',
-    'baseUrl' => 'http://svp.vg.no/api/v{apiVersion}/',
     'description' => 'PHP client for the Schibsted Video Platform API',
     'operations' => array(
 
@@ -197,6 +196,7 @@ return array(
         'assets.fetchAll' => array(
             'httpMethod' => 'GET',
             'uri' => '{clientId}/assets',
+            'responseClass' => 'SVP\Collection\Assets',
             'summary' => 'Get collection of assets',
             'parameters' => array(
                 'clientId' => array(
@@ -209,7 +209,7 @@ return array(
                     'description' => 'Filter list in the format of key::value. Each filter has to be separated by | sign. <br /><br /><b>Available filters:</b><br />categoryId<br /><br /><b>Example:</b><br />categoryId::139',
                     'location' => 'uri',
                     'type' => 'string',
-                    'required' => true,
+                    'required' => false,
                 ),
                 'limit' => array(
                     'description' => 'The maximum number of results to return',
@@ -229,6 +229,7 @@ return array(
         'assets.fetch' => array(
             'httpMethod' => 'GET',
             'uri' => '{clientId}/assets/{assetId}',
+            'responseClass' => 'SVP\Entity\Assets',
             'summary' => 'Get asset by assetId',
             'parameters' => array(
                 'clientId' => array(

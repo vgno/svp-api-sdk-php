@@ -267,7 +267,7 @@ class Client extends ServiceClient {
         $client->setDefaultOption('headers/X-SVA-Client', self::CLIENT_APP_ID);
 
         // Attach a service description to the client
-        $description = ServiceDescription::factory(__DIR__ . '/client.json');
+        $description = ServiceDescription::factory(__DIR__ . '/service.php');
         $client->setDescription($description);
 
         return $client;
