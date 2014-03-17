@@ -192,7 +192,7 @@ return array(
         'assets.fetchAll' => array(
             'httpMethod' => 'GET',
             'uri' => '{provider}/assets',
-            'responseClass' => 'SVP\Collection\Assets',
+            'responseClass' => 'SvpApi\Collection\Assets',
             'summary' => 'Get collection of assets',
             'parameters' => array(
                 'provider' => array(
@@ -225,7 +225,7 @@ return array(
         'assets.fetch' => array(
             'httpMethod' => 'GET',
             'uri' => '{provider}/assets/{assetId}',
-            'responseClass' => 'SVP\Entity\Assets',
+            'responseClass' => 'SvpApi\Entity\Assets',
             'summary' => 'Get asset by assetId',
             'parameters' => array(
                 'provider' => array(
