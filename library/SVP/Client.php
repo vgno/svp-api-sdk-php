@@ -239,24 +239,26 @@ class Client extends ServiceClient {
      * Factory method to create a new client.
      *
      * @param  array|Collection $config Configuration data
-     * @param  $clientId
      * @return Client
      */
     public static function factory($config = array()) {
-        $clientId = (isset($config['clientId']) ? $config['clientId'] : '');
+        $provider = (isset($config['provider']) ? $config['provider'] : '');
+        $appName = (isset($config['appName']) ? $config['appName'] : '');
 
         $defaults = array(
             'apiUrl'          => self::API_URL,
             'apiVersion'      => self::API_VERSION,
             'command.params' => array(
-                'clientId' => $clientId
+                'provider' => $provider,
+                'appName' => $appName
             )
         );
 
         $required = array(
             'apiUrl',
             'apiVersion',
-            'clientId'
+            'provider',
+            'appName'
         );
 
         $config = Collection::fromConfig($config, $defaults, $required);
@@ -264,7 +266,8 @@ class Client extends ServiceClient {
 
         // Set default headers
         $client->setDefaultOption('headers/Accept', 'application/json');
-        $client->setDefaultOption('headers/X-SVA-Client', self::CLIENT_APP_ID);
+        // Add client app name param to query string
+        $client->setDefaultOption('query', array('appName' => $appName));
 
         // Attach a service description to the client
         $description = ServiceDescription::factory(__DIR__ . '/service.php');

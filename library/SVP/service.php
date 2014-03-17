@@ -4,28 +4,26 @@ return array(
     'apiVersion' => '1',
     'description' => 'PHP client for the Schibsted Video Platform API',
     'operations' => array(
-
         'categories.fetchAll' => array(
             'httpMethod' => 'GET',
-            'uri' => '{clientId}/categories',
+            'uri' => '{provider}/categories',
             'summary' => 'Get collection of categories',
             'parameters' => array(
-                'clientId' => array(
-                    'description' => 'Client ID',
+                'provider' => array(
+                    'description' => 'Data provider',
                     'location' => 'uri',
                     'type' => 'string',
                     'required' => true,
                 ),
             )
         ),
-
         'categories.fetch' => array(
             'httpMethod' => 'GET',
-            'uri' => '{clientId}/categories/{categoryId}',
+            'uri' => '{provider}/categories/{categoryId}',
             'summary' => 'Get a Category based on ID',
             'parameters' => array(
-                'clientId' => array(
-                    'description' => 'Client ID',
+                'provider' => array(
+                    'description' => 'Data provider',
                     'location' => 'uri',
                     'type' => 'string',
                     'required' => true,
@@ -38,20 +36,19 @@ return array(
                 ),
             )
         ),
-
         'categories.create' => array(
             'httpMethod' => 'POST',
-            'uri' => '{clientId}/categories',
+            'uri' => '{provider}/categories',
             'summary' => 'Creates and get a category',
             'parameters' => array(
-                'clientId' => array(
-                    'description' => 'Client ID',
+                'provider' => array(
+                    'description' => 'Data provider',
                     'location' => 'uri',
                     'type' => 'string',
                     'required' => true,
                 ),
                 'title' => array(
-                    'description' => 'Client ID',
+                    'description' => 'Data provider',
                     'location' => 'json',
                     'type' => 'string',
                     'required' => true,
@@ -64,14 +61,13 @@ return array(
                 ),
             )
         ),
-
         'categories.update' => array(
             'httpMethod' => 'PUT',
-            'uri' => '{clientId}/categories/{categoryId}',
+            'uri' => '{provider}/categories/{categoryId}',
             'summary' => 'Updates and get a Category',
             'parameters' => array(
-                'clientId' => array(
-                    'description' => 'Client ID',
+                'provider' => array(
+                    'description' => 'Data provider',
                     'location' => 'uri',
                     'type' => 'string',
                     'required' => true,
@@ -83,7 +79,7 @@ return array(
                     'required' => true,
                 ),
                 'title' => array(
-                    'description' => 'Client ID',
+                    'description' => 'Data provider',
                     'location' => 'json',
                     'type' => 'string',
                     'required' => true,
@@ -99,11 +95,11 @@ return array(
 
         'categories.fetchAssets' => array(
             'httpMethod' => 'GET',
-            'uri' => '{clientId}/categories/{categoryId}/assets',
+            'uri' => '{provider}/categories/{categoryId}/assets',
             'summary' => 'Get category by ID with assets collection',
             'parameters' => array(
-                'clientId' => array(
-                    'description' => 'Client ID',
+                'provider' => array(
+                    'description' => 'Data provider',
                     'location' => 'uri',
                     'type' => 'string',
                     'required' => true,
@@ -131,11 +127,11 @@ return array(
 
         'mostSeen' => array(
             'httpMethod' => 'GET',
-            'uri' => '{clientId}/assets/most-seen',
+            'uri' => '{provider}/assets/most-seen',
             'summary' => 'Get a collection of most seen assets',
             'parameters' => array(
-                'clientId' => array(
-                    'description' => 'Client ID',
+                'provider' => array(
+                    'description' => 'Data provider',
                     'location' => 'uri',
                     'type' => 'string',
                     'required' => true,
@@ -163,11 +159,11 @@ return array(
 
         'search' => array(
             'httpMethod' => 'GET',
-            'uri' => '{clientId}/search',
+            'uri' => '{provider}/search',
             'summary' => 'Get a searching result',
             'parameters' => array(
-                'clientId' => array(
-                    'description' => 'Client ID',
+                'provider' => array(
+                    'description' => 'Data provider',
                     'location' => 'uri',
                     'type' => 'string',
                     'required' => true,
@@ -195,12 +191,12 @@ return array(
 
         'assets.fetchAll' => array(
             'httpMethod' => 'GET',
-            'uri' => '{clientId}/assets',
+            'uri' => '{provider}/assets',
             'responseClass' => 'SVP\Collection\Assets',
             'summary' => 'Get collection of assets',
             'parameters' => array(
-                'clientId' => array(
-                    'description' => 'Client ID',
+                'provider' => array(
+                    'description' => 'Data provider',
                     'location' => 'uri',
                     'type' => 'string',
                     'required' => true,
@@ -228,12 +224,12 @@ return array(
 
         'assets.fetch' => array(
             'httpMethod' => 'GET',
-            'uri' => '{clientId}/assets/{assetId}',
+            'uri' => '{provider}/assets/{assetId}',
             'responseClass' => 'SVP\Entity\Assets',
             'summary' => 'Get asset by assetId',
             'parameters' => array(
-                'clientId' => array(
-                    'description' => 'Client ID',
+                'provider' => array(
+                    'description' => 'Data provider',
                     'location' => 'uri',
                     'type' => 'string',
                     'required' => true,
