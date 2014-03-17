@@ -1,5 +1,5 @@
 <?php
-namespace SVP\Collection;
+namespace SvpApi\Collection;
 
 use Iterator;
 use Countable;

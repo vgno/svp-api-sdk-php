@@ -5,7 +5,7 @@
  * @author
  * @copyright VG
  */
-namespace SVP\Entity;
+namespace SvpApi\Entity;
 
 /**
  * SVP Category Entity

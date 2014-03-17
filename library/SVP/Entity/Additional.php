@@ -5,7 +5,7 @@
  * @author
  * @copyright VG
  */
-namespace SVP\Entity;
+namespace SvpApi\Entity;
 
 
 /**
@@ -23,7 +23,7 @@ class Additional extends EntityAbstract {
     public $settings;
 
     /**
-     * @param \SVP\Entity\Settings $settings
+     * @param \SvpApi\Entity\Settings $settings
      * @return self
      */
     public function setSettings($settings) {
@@ -32,7 +32,7 @@ class Additional extends EntityAbstract {
     }
 
     /**
-     * @return \SVP\Entity\Settings
+     * @return \SvpApi\Entity\Settings
      */
     public function getSettings() {
         return $this->settings;

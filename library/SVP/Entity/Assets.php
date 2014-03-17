@@ -5,7 +5,7 @@
  * @author
  * @copyright VG
  */
-namespace SVP\Entity;
+namespace SvpApi\Entity;
 
 use Guzzle\Service\Command\OperationCommand;
 use Guzzle\Service\Command\ResponseClassInterface;

@@ -6,7 +6,7 @@
  * @copyright VG
  */
 
-namespace SVP;
+namespace SvpApi;
 
 use Guzzle\Common\Exception\GuzzleException;
 

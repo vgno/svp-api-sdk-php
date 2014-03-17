@@ -1,18 +1,18 @@
 <?php
 /**
- * @package SVP\Collection
+ * @package SvpApi\Collection
  */
-namespace SVP\Collection;
+namespace SvpApi\Collection;
 
 use Guzzle\Service\Command\ResponseClassInterface;
 use Guzzle\Service\Command\OperationCommand;
-use SVP\Entity\Assets as AssetsModel;
+use SvpApi\Entity\Assets as AssetsModel;
 use Guzzle\Common\Exception\RuntimeException;
 
 /**
  * Class Assets
  *
- * @package SVP\Collection
+ * @package SvpApi\Collection
  */
 class Assets extends AbstractCollection implements ResponseClassInterface {
     /**

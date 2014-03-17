@@ -6,7 +6,7 @@
  * @copyright VG
  */
 
-namespace SVP;
+namespace SvpApi;
 
 use Guzzle\Http\Client as HttpClient,
     Guzzle\Common\Collection,
