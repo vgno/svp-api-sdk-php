@@ -8,11 +8,9 @@
 
 namespace SvpApi;
 
-use Guzzle\Http\Client as HttpClient,
-    Guzzle\Common\Collection,
+use Guzzle\Common\Collection,
     Guzzle\Service\Client as ServiceClient,
-    Guzzle\Service\Description\ServiceDescription,
-    Guzzle\Common\Event;
+    Guzzle\Service\Description\ServiceDescription;
 
 /**
  * SVP API client
@@ -26,7 +24,7 @@ class Client extends ServiceClient {
      *
      * @var string
      */
-    const API_URL = 'http://svp.vg.no/api';
+    const API_URL = 'http://svp.vg.no/svp/api';
 
     /**
      * API version
