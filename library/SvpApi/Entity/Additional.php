@@ -5,8 +5,8 @@
  * @author
  * @copyright VG
  */
-namespace SvpApi\Entity;
 
+namespace SvpApi\Entity;
 
 /**
  * SVP Additional Entity
@@ -23,11 +23,15 @@ class Additional extends EntityAbstract {
     public $settings;
 
     /**
-     * @param \SvpApi\Entity\Settings $settings
+     * @param array|Settings $settings
      * @return self
      */
-    public function setSettings($settings) {
-        $this->settings = $settings;
+    public function setSettings($settings = array()) {
+        if (is_array($settings)) {
+            $this->settings = new Settings($settings);
+        } else {
+            $this->settings = $settings;
+        }
         return $this;
     }
 

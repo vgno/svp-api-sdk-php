@@ -1,0 +1,294 @@
+HTTP/1.1 200 OK
+Date: Thu, Wed, 19 Mar 2014 14:53:47 GMT
+Connection: keep-alive
+Content-Type: application/json
+
+{
+    "_links": {
+        "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets"
+        },
+        "next": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets?page=2"
+        }
+    },
+    "_embedded": {
+        "assets": [
+            {
+                "id": 78939,
+                "title": "Rett før V65 19. mars",
+                "titleFront": null,
+                "description": "I tipsprogrammet Rett før V65 deler Hans Kristian Skubberud informasjonen han har fått fra flere av hovedaktørene i V65-omgangen på Bjerke.",
+                "descriptionFront": null,
+                "published": 1395231000,
+                "duration": 342000,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 206,
+                    "title": "Trav",
+                    "parentId": 3
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/e69791b7423c7a329b97712739aab0f3",
+                    "front": null
+                },
+                "additional": {
+                    "settings": {
+                        "showAds": true,
+                        "showOnAirplay": true
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78939"
+                    }
+                }
+            },
+            {
+                "id": 78938,
+                "title": "Desperat mor båret bort fra pressekonferansen: - Hvor er sønnen min?",
+                "titleFront": null,
+                "description": "Det har gått elleve dager siden flyet MH370 forsvant i Sørøst-Asia. Under onsdagens pressekonferanse om flymysteriet utspant det seg svært sterke scener, da de pårørende krevde svar på alle de ubesvarte spørsmålene: Hva har skjedd med mine kjære? Og hvor er de?",
+                "descriptionFront": null,
+                "published": 1395226380,
+                "duration": 75000,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 1,
+                    "title": "Nyheter",
+                    "parentId": 214
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/70305a76f203a5b853db2537c2d5a132",
+                    "front": null
+                },
+                "additional": {},
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78938"
+                    }
+                }
+            },
+            {
+                "id": 78929,
+                "title": "Sprengte militære bomber for å unngå flom",
+                "titleFront": null,
+                "description": "Tirsdag måtte kinesiske myndigheter tilkalle militær hjelp da isen måtte sprenges på elven Huang He (Den Gule Elven) i Kina. Isen gjorde at flomrisikoen vokste seg faretruende stor og den begynte å blokkere elvekanalen.",
+                "descriptionFront": null,
+                "published": 1395223860,
+                "duration": 59000,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 1,
+                    "title": "Nyheter",
+                    "parentId": 214
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/557a8150af82d908eae4b45f541b12e7",
+                    "front": null
+                },
+                "additional": {},
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78929"
+                    }
+                }
+            },
+            {
+                "id": 78933,
+                "title": "Kronprinsparet med selfie-bonanza i Vietnam",
+                "titleFront": null,
+                "description": "På den første dagen av det tre dager lange offisielle besøket i Vietnam, kjørte Kronprinsparet sykkeldrosje i Hanois travle gater. Da kom mobilen opp og Kronprinsen tok en rekke selfies.",
+                "descriptionFront": null,
+                "published": 1395222960,
+                "duration": 68000,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 1,
+                    "title": "Nyheter",
+                    "parentId": 214
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/4fe33eeade82e08ccf11afc461ffdfdd",
+                    "front": null
+                },
+                "additional": {},
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78933"
+                    }
+                }
+            },
+            {
+                "id": 78923,
+                "title": "Zucca storspilte og ble kampens nest beste",
+                "titleFront": null,
+                "description": "Mats Zuccarello hadde to målgivende pasninger da New York Rangers vant 8-4 over Ottawa Senators. Zuccarello var på isen i 17.38 minutter og han fikk pluss 4 på pluss/minus-statistikken.",
+                "descriptionFront": null,
+                "published": 1395218580,
+                "duration": 120000,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 84,
+                    "title": "NHL",
+                    "parentId": 3
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/5f9a2200cd0be04fbf3cb35fd79e1411",
+                    "front": null
+                },
+                "additional": {},
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78923"
+                    }
+                }
+            },
+            {
+                "id": 78921,
+                "title": "Flyinstruktør: Slik fungerer radaren",
+                "titleFront": null,
+                "description": "Flyinstruktør Kjetil Mathisen forklarer hvordan radarsystemet fungerer. Han ønsker ikke å spekulere i hva som kan ha skjedd med det malaysiske flyet som nå har vært forsvunnet i over en uke.",
+                "descriptionFront": null,
+                "published": 1395216180,
+                "duration": 153000,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 1,
+                    "title": "Nyheter",
+                    "parentId": 214
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/e7743b5bbeea2af6a5ec6e94379afc38",
+                    "front": null
+                },
+                "additional": {},
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78921"
+                    }
+                }
+            },
+            {
+                "id": 78922,
+                "title": "Opptak: Siste nytt om flymysteriet - dag 11",
+                "titleFront": null,
+                "description": "I VGs direktesending gir nyhetsreporter Rune Thomas Ege og programleder Silje Ensrud gir deg siste nytt om Malaysia Airlines MH370, som forsvant natt til 8. mars på sin ferd fra Kuala Lumpur til Beijing. Flyet hadde 227 passasjerer og 12 besetningsmedlemmer om bord. VG sender pressekonferansen fra Malaysia direkte.",
+                "descriptionFront": null,
+                "published": 1395211140,
+                "duration": 0,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 256,
+                    "title": "Flymysteriet i Sørøst-Asia",
+                    "parentId": 1
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/51dec4a2f83bd80c9c9424dea4ed7f4e",
+                    "front": null
+                },
+                "additional": {},
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78922"
+                    }
+                }
+            },
+            {
+                "id": 78920,
+                "title": "Krim-beboere feiret: - Dagen jeg får russisk pass blir en lykkelig dag",
+                "titleFront": null,
+                "description": "Russlands president Vladimir Putin undertegnet i dag en avtale som gjør Krim en del av den Russiske føderasjon. Pro-russerne på Krim feiret avtalen, mens vesten fordømte annekteringen. De ukrainske myndighetene gikk så langt at de sammelignet avtalen med starten på andre verdenskrig.",
+                "descriptionFront": null,
+                "published": 1395186000,
+                "duration": 222000,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 1,
+                    "title": "Nyheter",
+                    "parentId": 214
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/882bf817866d0a48c80776aa7cbca15b",
+                    "front": null
+                },
+                "additional": {},
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78920"
+                    }
+                }
+            },
+            {
+                "id": 78919,
+                "title": "Ronaldo tok innpå Messis scoringsrekord",
+                "titleFront": null,
+                "description": "(Real Madrid-Schalke 3-1, 9-2 sammenlagt) Cristiano Ronaldo (29) satte ny personlig scoringsrekord da Real Madrid lekte seg til kvartfinale i Champions League mot Schalke. Portugiseren scoret sitt 12. og 13. Champions League-mål for sesongen, og er dermed bare ett mål bak Lionel Messis turneringsrekord i 2011/12-sesongen.",
+                "descriptionFront": null,
+                "published": 1395185400,
+                "duration": 164000,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 52,
+                    "title": "Fotball",
+                    "parentId": 3
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/2654f064edbf8c08877af3e8f64ef3cc",
+                    "front": null
+                },
+                "additional": {},
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78919"
+                    }
+                }
+            },
+            {
+                "id": 78918,
+                "title": "«FOPPALL» 69: Ronny Johnsen",
+                "titleFront": null,
+                "description": "Denne uken har «FOPPALL» besøk av en av Norges aller beste fotballspillere gjennom tidene; Ronny Johnsen",
+                "descriptionFront": null,
+                "published": 1395178920,
+                "duration": 1667000,
+                "assetType": "video",
+                "status": "active",
+                "articleUrl": null,
+                "category": {
+                    "id": 139,
+                    "title": "Foppall",
+                    "parentId": 171
+                },
+                "images": {
+                    "main": "http://imbo.vgtv.no/users/vgtv/images/feedd8e691f7c3c174e5c15119f002d1",
+                    "front": null
+                },
+                "additional": {},
+                "_links": {
+                    "self": {
+                        "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78918"
+                    }
+                }
+            }
+        ]
+    }
+}

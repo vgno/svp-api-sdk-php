@@ -1,0 +1,32 @@
+HTTP/1.1 200 OK
+Date: Thu, Wed, 19 Mar 2014 14:53:47 GMT
+Connection: keep-alive
+Content-Type: application/json
+
+{
+    "id": 78939,
+    "title": "Rett før V65 19. mars",
+    "titleFront": null,
+    "description": "I tipsprogrammet Rett før V65 deler Hans Kristian Skubberud informasjonen han har fått fra flere av hovedaktørene i V65-omgangen på Bjerke.",
+    "descriptionFront": null,
+    "published": 1395231000,
+    "duration": 342000,
+    "assetType": "video",
+    "status": "active",
+    "articleUrl": null,
+    "category": {
+        "id": 206,
+        "title": "Trav",
+        "parentId": 3
+    },
+    "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/e69791b7423c7a329b97712739aab0f3",
+        "front": null
+    },
+    "additional": {},
+    "_links": {
+        "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78939"
+        }
+    }
+}

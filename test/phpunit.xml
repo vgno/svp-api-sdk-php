@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true" bootstrap="bootstrap.php">
+  <testsuites>
+    <testsuite name="SVP api client test suite">
+      <directory>SvpApiTest</directory>
+    </testsuite>
+  </testsuites>
+
+  <filter>
+    <whitelist addUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">../library/SvpApi</directory>
+    </whitelist>
+  </filter>
+</phpunit>

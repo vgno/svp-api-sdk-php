@@ -1,10 +1,22 @@
 <?php
+/**
+ * This file is part of the SVP API PHP client package
+ *
+ * @author
+ * @copyright VG
+ */
+
 namespace SvpApi\Collection;
 
 use Iterator;
 use Countable;
 use ArrayAccess;
 
+/**
+ * Class AbstractCollection
+ *
+ * @package SvpApi\Collection
+ */
 class AbstractCollection implements Iterator, Countable, ArrayAccess {
     /**
      * Current position in the internal container

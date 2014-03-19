@@ -1,13 +1,17 @@
 <?php
 /**
- * @package SvpApi\Collection
+ * This file is part of the SVP API PHP client package
+ *
+ * @author
+ * @copyright VG
  */
+
 namespace SvpApi\Collection;
 
 use Guzzle\Service\Command\ResponseClassInterface;
 use Guzzle\Service\Command\OperationCommand;
-use SvpApi\Entity\Assets as AssetsModel;
 use Guzzle\Common\Exception\RuntimeException;
+use SvpApi\Entity\Assets as AssetsModel;
 
 /**
  * Class Assets
@@ -15,15 +19,6 @@ use Guzzle\Common\Exception\RuntimeException;
  * @package SvpApi\Collection
  */
 class Assets extends AbstractCollection implements ResponseClassInterface {
-    /**
-     * @var int
-     */
-    private $nextMaxId;
-    /**
-     * @var int
-     */
-    private $prevMinId;
-
     /**
      * Factory method
      *
@@ -52,37 +47,5 @@ class Assets extends AbstractCollection implements ResponseClassInterface {
         }
 
         return new self($collection);
-    }
-
-    /**
-     * @param int $nextMaxId
-     * @return self
-     */
-    public function setNextMaxId($nextMaxId) {
-        $this->nextMaxId = $nextMaxId;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getNextMaxId() {
-        return $this->nextMaxId;
-    }
-
-    /**
-     * @param int $prevMinId
-     * @return self
-     */
-    public function setPrevMinId($prevMinId) {
-        $this->prevMinId = $prevMinId;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPrevMinId() {
-        return $this->prevMinId;
     }
 }

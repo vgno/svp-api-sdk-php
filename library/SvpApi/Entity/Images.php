@@ -5,6 +5,7 @@
  * @author
  * @copyright VG
  */
+
 namespace SvpApi\Entity;
 
 /**

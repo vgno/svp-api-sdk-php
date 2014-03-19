@@ -5,6 +5,7 @@
  * @author
  * @copyright VG
  */
+
 namespace SvpApi\Entity;
 
 use Guzzle\Service\Command\OperationCommand;
@@ -117,7 +118,7 @@ class Assets extends EntityAbstract implements ResponseClassInterface {
     /**
      * Set Additional information
      *
-     * @param string $additional Additional information
+     * @param Settings $additional Additional information
      */
     public function setAdditional($additional) {
         if (is_array($additional)) {
@@ -353,7 +354,6 @@ class Assets extends EntityAbstract implements ResponseClassInterface {
         if ($command->getResponse()->getStatusCode() == 200) {
             try {
                 $response = $command->getResponse()->json();
-
             } catch (RuntimeException $e) {
                 $message = 'Can\'t parse json response: %s';
                 $message = sprintf($message, $e->getMessage(), E_USER_WARNING);
