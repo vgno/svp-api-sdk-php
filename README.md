@@ -14,7 +14,8 @@ Given that you have loaded the autoloads file created by composer, you are able 
 use SVP\Client;
 
 $client = Client::factory(array(
-    'clientId' => 'yourClientId'
+    'provider' => 'yourDataProvider',
+    'appName'  => 'appilicationUniqueName',
 ));
 
 $categories = $client->fetchCategories();
