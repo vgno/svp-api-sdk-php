@@ -1,7 +1,7 @@
 Schibsted Video Platform API client written in PHP
 ==============================
 
-[![Current build Status](https://secure.travis-ci.org/cybuhh/api-sdk-php.png)](http://travis-ci.org/cybuhh/api-sdk-php)
+[![Build Status](https://travis-ci.org/cybuhh/svp-api-sdk-php.svg?branch=master)](https://travis-ci.org/cybuhh/svp-api-sdk-php)
 
 The Schibsted Video Platform PHP client is written in PHP and based on the Guzzle library.
 
