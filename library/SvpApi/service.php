@@ -203,7 +203,7 @@ return array(
                 ),
                 'filter' => array(
                     'description' => 'Filter list in the format of key::value. Each filter has to be separated by | sign. <br /><br /><b>Available filters:</b><br />categoryId<br /><br /><b>Example:</b><br />categoryId::139',
-                    'location' => 'uri',
+                    'location' => 'query',
                     'type' => 'string',
                     'required' => false,
                 ),
