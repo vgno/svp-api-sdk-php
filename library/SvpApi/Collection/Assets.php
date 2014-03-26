@@ -26,10 +26,13 @@ class Assets extends AbstractCollection implements ResponseClassInterface {
      * @return self
      */
     public static function fromCommand(OperationCommand $command) {
+        $halLinks = array();
+
         if ($command->getResponse()->getStatusCode() == 200) {
             try {
                 $response = $command->getResponse()->json();
                 $itemsList = isset($response['_embedded']['assets']) ? (array) $response['_embedded']['assets'] : array();
+                $halLinks = isset($response['_links']) ? (array) $response['_links'] : array();
             } catch (RuntimeException $e) {
                 $message = 'Can\'t parse json response: %s';
                 $message = sprintf($message, $e->getMessage(), E_USER_WARNING);
@@ -46,6 +49,6 @@ class Assets extends AbstractCollection implements ResponseClassInterface {
             $collection = array();
         }
 
-        return new self($collection);
+        return new self($collection, $halLinks);
     }
 }

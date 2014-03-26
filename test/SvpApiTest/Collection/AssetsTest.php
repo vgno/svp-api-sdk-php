@@ -36,6 +36,8 @@ class AssetsTest extends \PHPUnit_Framework_TestCase {
         );
         $collection = new AssetsCollection($properties);
         $this->assertCount($collection->count(), $properties);
+        $this->assertNull($collection->getCurrentPage());
+        $this->assertNull($collection->getNextPage());
 
         /** @var AssetsEntity $asset */
         foreach ($collection as $asset) {
