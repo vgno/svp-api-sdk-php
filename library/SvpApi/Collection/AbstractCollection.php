@@ -33,12 +33,28 @@ class AbstractCollection implements Iterator, Countable, ArrayAccess {
     private $items = array();
 
     /**
+     * Current page number
+     *
+     * @var int
+     */
+    protected $currentPage;
+
+    /**
+     * Next page number
+     *
+     * @var int
+     */
+    protected $nextPage;
+
+    /**
      * Class constructor
      *
      * @param array $items An array of objects
+     * @param array $links An array of HAL links
      */
-    public function __construct(array $items = array()) {
+    public function __construct(array $items = array(), array $links = array()) {
         $this->items = $items;
+        $this->parseHalLinks($links);
     }
 
     /**
@@ -126,5 +142,49 @@ class AbstractCollection implements Iterator, Countable, ArrayAccess {
      */
     public function offsetUnset($offset) {
         throw new \RuntimeException('Unsetting values from the collection is not supported');
+    }
+
+    /**
+     * Parse HAL links given (strip page number)
+     *
+     * @param array $links array of hal links
+     */
+    private function parseHalLinks(array $links) {
+        if (count($links)) {
+            if (isset($links['self']['href'])) {
+                $this->currentPage = $this->parsePageUrl($links['self']['href']);
+            }
+
+            if (isset($links['next']['href'])) {
+                $this->nextPage = $this->parsePageUrl($links['next']['href']);
+            }
+        }
+    }
+
+    /**
+     * Url parser
+     * @param string $url URL to be parsed for page number
+     *
+     * @return string
+     */
+    protected function parsePageUrl($url) {
+        preg_match('/[?&]page=(\d+)/', $url, $matches);
+        return count($matches) ? array_pop($matches) : null;
+    }
+
+    /**
+     * Get current page number
+     * @return int
+     */
+    public function getCurrentPage() {
+        return $this->currentPage;
+    }
+
+    /**
+     * Get next page number
+     * @return int
+     */
+    public function getNextPage() {
+        return $this->nextPage;
     }
 }

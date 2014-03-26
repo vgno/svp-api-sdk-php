@@ -59,6 +59,8 @@ class ClientTest extends GuzzleTestCase {
         $collection = $this->client->fetchAssets();
         $this->assertInstanceOf('SvpApi\Collection\Assets', $collection);
         $this->assertGreaterThan(0, $collection->count());
+        $this->assertNull($collection->getCurrentPage());
+        $this->assertNotNull($collection->getNextPage());
 
         /** @var AssetsEntity $assets */
         foreach ($collection as $assets) {
