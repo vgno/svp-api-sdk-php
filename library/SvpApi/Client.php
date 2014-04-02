@@ -242,13 +242,17 @@ class Client extends ServiceClient {
     public static function factory($config = array()) {
         $provider = (isset($config['provider']) ? $config['provider'] : '');
         $appName = (isset($config['appName']) ? $config['appName'] : '');
+        $publicKey = (isset($config['publicKey']) ? $config['publicKey'] : '');
+        $privateKey = (isset($config['privateKey']) ? $config['privateKey'] : '');
 
         $defaults = array(
             'apiUrl'          => self::API_URL,
             'apiVersion'      => self::API_VERSION,
+            'publicKey' => $publicKey,
+            'privateKey' => $privateKey,
             'command.params' => array(
                 'provider' => $provider,
-                'appName' => $appName
+                'appName' => $appName,
             )
         );
 
@@ -288,7 +292,27 @@ class Client extends ServiceClient {
             $options
         ));
 
+        /* Add authentication headers for all HTTP methods except for GET */
+        if ($command->getOperation()->getHttpMethod() !== 'GET') {
+            $headers = $command->getRequestHeaders();
+            $headers->add('X-SvpApiAuth-PublicKey', $this->getConfig('publicKey'));
+            $headers->add('X-SvpApiAuth-AccessToken', $this->generateAccessToken($command));
+        }
+
         $command->execute();
         return $command->getResult();
+    }
+
+    /**
+     * Generate access token value
+     *
+     * @see http://svp.vg.no/svp/api/v1/docs/#authentication
+     * @param Guzzle\Service\Command\OperationCommand $command
+     */
+    private function generateAccessToken(\Guzzle\Service\Command\OperationCommand $command) {
+        $command->prepare();
+        return hash_hmac('sha256', $command->getOperation()->getHttpMethod() .
+            urldecode($command->getRequest()->getUrl()), $this->getConfig('privateKey')
+        );
     }
 }
