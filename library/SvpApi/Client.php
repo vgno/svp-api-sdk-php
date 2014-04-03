@@ -248,13 +248,19 @@ class Client extends ServiceClient {
         $defaults = array(
             'apiUrl'          => self::API_URL,
             'apiVersion'      => self::API_VERSION,
-            'publicKey' => $publicKey,
-            'privateKey' => $privateKey,
             'command.params' => array(
                 'provider' => $provider,
                 'appName' => $appName,
             )
         );
+
+        /* Set public and private keys if provided */
+        if ($publicKey) {
+            $defaults['publicKey'] = $publicKey;
+        }
+        if ($privateKey) {
+            $defaults['privateKey'] = $privateKey;
+        }
 
         $required = array(
             'apiUrl',
@@ -294,9 +300,12 @@ class Client extends ServiceClient {
 
         /* Add authentication headers for all HTTP methods except for GET */
         if ($command->getOperation()->getHttpMethod() !== 'GET') {
-            $headers = $command->getRequestHeaders();
-            $headers->add('X-SvpApiAuth-PublicKey', $this->getConfig('publicKey'));
-            $headers->add('X-SvpApiAuth-AccessToken', $this->generateAccessToken($command));
+            if (!$this->getConfig('publicKey') || !$this->getConfig('privateKey')) {
+                throw new Exception('Both publicKey and privateKey config values must be set to perform write operations.');
+            }
+            $client = $command->getClient();
+            $client->setDefaultOption('headers/X-SvpApiAuth-PublicKey', $this->getConfig('publicKey'));
+            $client->setDefaultOption('headers/X-SvpApiAuth-AccessToken', $this->generateAccessToken($command));
         }
 
         $command->execute();
@@ -304,15 +313,17 @@ class Client extends ServiceClient {
     }
 
     /**
-     * Generate access token value
+     * Generate access token value based on current request and client application's private key
      *
      * @see http://svp.vg.no/svp/api/v1/docs/#authentication
      * @param Guzzle\Service\Command\OperationCommand $command
      */
     private function generateAccessToken(\Guzzle\Service\Command\OperationCommand $command) {
-        $command->prepare();
-        return hash_hmac('sha256', $command->getOperation()->getHttpMethod() .
-            urldecode($command->getRequest()->getUrl()), $this->getConfig('privateKey')
+        /* Operate on command's clone to avoid changing its state prematurely */
+        $commandClone = clone $command;
+        $commandClone->prepare();
+        return hash_hmac('sha256', $commandClone->getOperation()->getHttpMethod() .
+            urldecode($commandClone->getRequest()->getUrl()), $this->getConfig('privateKey')
         );
     }
 }

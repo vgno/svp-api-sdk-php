@@ -84,12 +84,43 @@ class ClientTest extends GuzzleTestCase {
     /**
      * Test fetch assets item
      */
-    public function testFetch() {
+    public function testFetchAsset() {
         $this->setMockResponse($this->client, 'assets_fetch');
         /** @var AssetsEntity $asset */
         $assets = $this->client->fetchAsset(37);
         $this->assertInstanceOf('SvpApi\Entity\Assets', $assets);
         $this->assertNotNull($assets->getId());
         $this->assertNotEmpty($assets->getTitle());
+    }
+
+    /**
+     * Test client's attempt to put data to API without required authentication keys present
+     *
+     * @expectedException \SvpApi\Exception
+     */
+    public function testPutCategoryNoKeys() {
+        $category = $this->client->updateCategory(31, array('title' => 'test'));
+    }
+
+    /**
+     * Test client's attempt to put d to API without required authentication keys presentata to API with invalid authentication keys
+     *
+     * @expectedException \Guzzle\Http\Exception\ClientErrorResponseException
+     */
+    public function testPutCategoryInvalidKeys() {
+        $config = $this->config + ['publicKey' => 'foo', 'privateKey' => 'bar'];
+        $client = Client::factory($config);
+        $this->setMockResponse($client, 'category_put_invalid');
+        $category = $client->updateCategory(31, array('title' => 'test'));
+    }
+    /**
+     * Test client's attempt to put valid data
+     */
+    public function testPutCategoryValid() {
+        $config = $this->config + ['publicKey' => 'foo', 'privateKey' => 'bar'];
+        $client = Client::factory($config);
+        $this->setMockResponse($client, 'category_put');
+        $category = $client->updateCategory(31, array('title' => 'test'));
+        $this->assertInternalType('array', $category);
     }
 }

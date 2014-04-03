@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Date: Thu, Wed, 19 Mar 2014 14:53:47 GMT
+Connection: keep-alive
+Content-Type: application/json
+
+{
+    "id": 31,
+    "title": "Underholdningsprogrammer",
+    "parentId": 0,
+    "_links": {
+        "self": {
+            "href": "http://svp-stage.vg.no/svp/api/v1/vgtv2/categories/31"
+        }
+    }
+}
