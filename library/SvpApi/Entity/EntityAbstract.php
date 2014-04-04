@@ -48,7 +48,7 @@ abstract class EntityAbstract {
      * @return array
      */
     public function getArrayCopy() {
-        $output = [];
+        $output = array();
         foreach ($this->getEntityProperties() as $property) {
             $output[$property] = $this->{'get' . ucfirst($property)}();
         }
