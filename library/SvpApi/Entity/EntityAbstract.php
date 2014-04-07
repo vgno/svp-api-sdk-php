@@ -14,7 +14,7 @@ namespace SvpApi\Entity;
  * @author
  * @copyright VG
  */
-abstract class EntityAbstract {
+abstract class EntityAbstract implements \JsonSerializable {
     /**
      * Construct and set properties from given array
      *
@@ -23,9 +23,7 @@ abstract class EntityAbstract {
     public function __construct($properties = array()) {
         foreach ($properties as $key => $value) {
             $method = 'set' . ucfirst($key);
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
+            $this->$method($value);
         }
     }
 
@@ -56,11 +54,41 @@ abstract class EntityAbstract {
     }
 
     /**
+     * Enable the object to be serialized properly on json_encode invocation
+     */
+    public function jsonSerialize() {
+        return $this->getArrayCopy();
+    }
+
+    /**
      * Get list of class' properties
      *
      * @return array
      */
     private function getEntityProperties() {
         return array_keys(get_object_vars($this));
+    }
+
+    /**
+     * Provide basic getters/setters for properties existing within entity classes 
+     */
+    public function __call($name, $arguments) {
+        $prefix = substr($name, 0, 3);
+        $property = lcfirst(substr($name, 3));
+        if ($prefix == 'set') {
+            if (property_exists($this, $property)) {
+                $this->$property = $arguments[0];
+            }
+        } else if ($prefix == 'get') {
+            if (property_exists($this, $property)) {
+                return $this->$property;
+            } else {
+                trigger_error('Undefined property "' . get_class($this) . '::' . $property . '"',
+                    E_USER_NOTICE);
+            }
+        } else {
+            trigger_error('Undefined method "' . get_class($this) . '::' . $name . '()"',
+                E_USER_NOTICE);
+        }
     }
 }

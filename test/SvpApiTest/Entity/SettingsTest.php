@@ -8,7 +8,7 @@
 
 namespace SvpApiTest\Entity;
 
-use SvpApi\Entity\Settings;
+use SvpApi\Entity\Assets\Additional\Settings;
 
 /**
  * Class SettingsTest
@@ -17,7 +17,7 @@ use SvpApi\Entity\Settings;
  */
 class SettingsTest extends \PHPUnit_Framework_TestCase {
     /**
-     *
+     * Test object creation without properties
      */
     public function testCreateObjectWithoutProperties() {
         $settings = new Settings();
@@ -26,7 +26,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     *
+     * Test object creation with properties
      */
     public function testCreateObjectWithProperties() {
         $settings = new Settings(array('showAds'=> true, 'showOnAirplay'=> true));

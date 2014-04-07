@@ -8,8 +8,8 @@
 
 namespace SvpApiTest\Entity;
 
-use SvpApi\Entity\Additional;
-use SvpApi\Entity\Settings;
+use SvpApi\Entity\Assets\Additional;
+use SvpApi\Entity\Assets\Additional\Settings;
 
 /**
  * Class AdditionalTest
@@ -18,31 +18,23 @@ use SvpApi\Entity\Settings;
  */
 class AdditionalTest extends \PHPUnit_Framework_TestCase {
     /**
-     *
-     */
-    public function testCreateObjectWithoutProperties() {
-        $additional = new Additional();
-        $this->assertNull($additional->getSettings());
-    }
-
-    /**
-     *
+     * Test object creation with array properties
      */
     public function testCreateObjectWithArrayProperties() {
         $additional = new Additional(array('settings' => array('showAds' => true, 'showOnAirplay' => true)));
         $settings = $additional->getSettings();
-        $this->assertInstanceOf('SvpApi\Entity\Settings', $settings);
+        $this->assertInstanceOf('SvpApi\Entity\Assets\Additional\Settings', $settings);
         $this->assertTrue($settings->getShowAds());
         $this->assertTrue($settings->getShowOnAirplay());
     }
 
     /**
-     *
+     * Test object creation with object properties
      */
     public function testCreateObjectWithObjectProperties() {
         $additional = new Additional(array('settings' => new Settings(array('showAds' => true, 'showOnAirplay' => true))));
         $settings = $additional->getSettings();
-        $this->assertInstanceOf('SvpApi\Entity\Settings', $settings);
+        $this->assertInstanceOf('SvpApi\Entity\Assets\Additional\Settings', $settings);
         $this->assertTrue($settings->getShowAds());
         $this->assertTrue($settings->getShowOnAirplay());
     }

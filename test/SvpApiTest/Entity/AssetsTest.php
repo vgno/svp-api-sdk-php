@@ -8,7 +8,7 @@
 
 namespace SvpApiTest\Entity;
 
-use SvpApi\Entity\Additional;
+use SvpApi\Entity\Assets\Additional;
 use SvpApi\Entity\Assets;
 use SvpApi\Entity\Category;
 use SvpApi\Entity\Images;
@@ -48,7 +48,8 @@ class AssetsTest extends \PHPUnit_Framework_TestCase {
                 'articleUrl' => 'http://foo.biz',
                 'category' => new Category(),
                 'images' => new Images(),
-                'additional' => new Additional(),
+                'additional' => new Additional(['settings' => ['showAds' => true,
+                   'showOnAirplay' => true]]),
             ))
         );
     }

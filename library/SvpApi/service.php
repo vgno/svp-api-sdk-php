@@ -249,5 +249,116 @@ return array(
             )
         ),
 
+        'assets.create' => array(
+            'httpMethod' => 'POST',
+            'uri' => '{provider}/assets',
+            'summary' => 'Creates and gets a category',
+            'parameters' => array(
+                'provider' => array(
+                    'description' => 'Data provider',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ),
+            )
+        ),
+
+        'assets.update' => array(
+            'httpMethod' => 'PATCH',
+            'uri' => '{provider}/assets/{assetId}',
+            'summary' => 'Updates and gets an asset',
+            'parameters' => array(
+                'provider' => array(
+                    'description' => 'Data provider',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ),
+                'assetId' => array(
+                    'description' => 'Id of an asset',
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'title' => array(
+                    'description' => 'Asset title',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ),
+                'titleFront' => array(
+                    'description' => 'Asset title on front page',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ),
+                'description' => array(
+                    'description' => 'Asset description',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ),
+                'descriptionFront' => array(
+                    'description' => 'Asset description on front page',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ),
+                'published' => array(
+                    'description' => 'Publication timestamp',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ),
+                'duration' => array(
+                    'description' => 'Asset duration',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ),
+                'assetType' => array(
+                    'description' => 'Type of the asset (video|audio)',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ),
+                'status' => array(
+                    'description' => 'State of the asset (active|inactive|draft)',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ),
+                'articleUrl' => array(
+                    'description' => 'Url to the VG article',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ),
+                'streamUrls' => array(
+                    'description' => 'Different flavour of streams available for the asset',
+                    'location' => 'json',
+                    'type' => 'object',
+                    'required' => false,
+                ),
+                'category' => array(
+                    'description' => 'Asset category',
+                    'location' => 'json',
+                    'type' => 'object',
+                    'required' => false,
+                ),
+                'images' => array(
+                    'description' => 'Images assigned to the asset',
+                    'location' => 'json',
+                    'type' => 'object',
+                    'required' => false,
+                ),
+                'additional' => array(
+                    'description' => 'Additional information regarding the asset',
+                    'location' => 'json',
+                    'type' => 'object',
+                    'required' => false,
+                ),
+            )
+        ),
     ),
 );

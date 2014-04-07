@@ -86,6 +86,36 @@ class Client extends ServiceClient {
     }
 
     /**
+     * Create an asset based on $assetData
+     *
+     * @param array $assetData array containing asset data
+     * @param array $options
+     */
+    public function createAsset(array $assetData, array $options = array()) {
+        return $this->runCommand(
+            'assets.create',
+            $assetData,
+            $options
+        );
+    }
+
+    /**
+     * Update asset based on $assetId and $assetData
+     *
+     * @param integer $assetId
+     * @param array $assetData array containing asset data
+     * @param array   $options
+     */
+    public function updateAsset($assetId, array $assetData, array $options = array()) {
+        $assetData['assetId'] = $assetId;
+        return $this->runCommand(
+            'assets.update',
+            $assetData,
+            $options
+        );
+    }
+
+    /**
      * Create a category for the client based on $categoryData
      *
      * @param array $categoryData array containing title of the category and optional parentId
@@ -212,11 +242,10 @@ class Client extends ServiceClient {
     }
 
     /**
-     * Fetch assets for a given client
+     * Fetch asset based on it's id
      *
-     * @param integer $limit
-     * @param integer $page
-     * @param string  $filter
+     * @param integer $assetId
+     * @param string|null $additional comma-separated additional parameters to be included
      * @param array   $options
      */
     public function fetchAsset($assetId, $additional = null, array $options = array()) {

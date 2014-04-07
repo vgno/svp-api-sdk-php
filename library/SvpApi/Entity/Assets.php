@@ -93,9 +93,15 @@ class Assets extends EntityAbstract implements ResponseClassInterface {
     /**
      * Additional information
      *
-     * @var Additional
+     * @var Assets\Additional
      */
     protected $additional;
+    /**
+     * Asset's stream urls
+     *
+     * @var Assets\StreamUrls
+     */
+    protected $streamUrls;
 
     /**
      * Set ID
@@ -118,11 +124,11 @@ class Assets extends EntityAbstract implements ResponseClassInterface {
     /**
      * Set Additional information
      *
-     * @param Settings $additional Additional information
+     * @param $additional Additional information
      */
     public function setAdditional($additional) {
         if (is_array($additional)) {
-            $this->additional = new Additional($additional);
+            $this->additional = new Assets\Additional($additional);
         } else {
             $this->additional = $additional;
         }
@@ -157,6 +163,24 @@ class Assets extends EntityAbstract implements ResponseClassInterface {
      */
     public function getCategory() {
         return $this->category;
+    }
+
+    /**
+     * Set streamUrls
+     *
+     * @param array $streamUrls 
+     */
+    public function setStreamUrls($streamUrls) {
+        $this->streamUrls = new Assets\StreamUrls($streamUrls);
+    }
+
+    /**
+     * Get stream urls
+     *
+     * @return string
+     */
+    public function getStreamUrls() {
+        return $this->streamUrls;
     }
 
     /**
