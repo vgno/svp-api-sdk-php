@@ -20,7 +20,7 @@ abstract class EntityAbstract implements \JsonSerializable {
      *
      * @param $properties
      */
-    public function __construct($properties = array()) {
+    public function __construct($properties = []) {
         foreach ($properties as $key => $value) {
             $method = 'set' . ucfirst($key);
             $this->$method($value);
@@ -46,7 +46,7 @@ abstract class EntityAbstract implements \JsonSerializable {
      * @return array
      */
     public function getArrayCopy() {
-        $output = array();
+        $output = [];
         foreach ($this->getEntityProperties() as $property) {
             $output[$property] = $this->{'get' . ucfirst($property)}();
         }

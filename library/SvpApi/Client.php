@@ -45,10 +45,10 @@ class Client extends ServiceClient {
      *
      * @param array $options
      */
-    public function fetchCategories(array $options = array()) {
+    public function fetchCategories(array $options = []) {
         return $this->runCommand(
             'categories.fetchAll',
-            array(),
+            [],
             $options
         );
     }
@@ -59,12 +59,12 @@ class Client extends ServiceClient {
      * @param integer $categoryId
      * @param array   $options
      */
-    public function fetchCategory($categoryId, array $options = array()) {
+    public function fetchCategory($categoryId, array $options = []) {
         return $this->runCommand(
             'categories.fetch',
-            array(
+            [
                 'categoryId' => $categoryId
-            ),
+            ],
             $options
         );
     }
@@ -76,7 +76,7 @@ class Client extends ServiceClient {
      * @param array $categoryData array containing title of the category and optional parentId
      * @param array   $options
      */
-    public function updateCategory($categoryId, array $categoryData, array $options = array()) {
+    public function updateCategory($categoryId, array $categoryData, array $options = []) {
         $categoryData['categoryId'] = $categoryId;
         return $this->runCommand(
             'categories.update',
@@ -91,7 +91,7 @@ class Client extends ServiceClient {
      * @param array $assetData array containing asset data
      * @param array $options
      */
-    public function createAsset(array $assetData, array $options = array()) {
+    public function createAsset(array $assetData, array $options = []) {
         return $this->runCommand(
             'assets.create',
             $assetData,
@@ -106,7 +106,7 @@ class Client extends ServiceClient {
      * @param array $assetData array containing asset data
      * @param array   $options
      */
-    public function updateAsset($assetId, array $assetData, array $options = array()) {
+    public function updateAsset($assetId, array $assetData, array $options = []) {
         $assetData['assetId'] = $assetId;
         return $this->runCommand(
             'assets.update',
@@ -121,7 +121,7 @@ class Client extends ServiceClient {
      * @param array $categoryData array containing title of the category and optional parentId
      * @param array   $options
      */
-    public function createCategory(array $categoryData, array $options = array()) {
+    public function createCategory(array $categoryData, array $options = []) {
         return $this->runCommand(
             'categories.create',
             $categoryData,
@@ -137,8 +137,8 @@ class Client extends ServiceClient {
      * @param integer $page
      * @param array   $options
      */
-    public function fetchCategoryAssets($categoryId, $limit = null, $page = null, array $options = array()) {
-        $defaultOptions = array('categoryId' => $categoryId);
+    public function fetchCategoryAssets($categoryId, $limit = null, $page = null, array $options = []) {
+        $defaultOptions = ['categoryId' => $categoryId];
 
         if ($limit) {
             $defaultOptions['limit'] = $limit;
@@ -163,8 +163,8 @@ class Client extends ServiceClient {
      * @param string  $filter
      * @param array   $options
      */
-    public function fetchMostSeen($interval = null, $limit = null, $filter = null, array $options = array()) {
-        $defaultOptions = array();
+    public function fetchMostSeen($interval = null, $limit = null, $filter = null, array $options = []) {
+        $defaultOptions = [];
 
         if ($interval) {
             $defaultOptions['interval'] = $interval;
@@ -193,8 +193,8 @@ class Client extends ServiceClient {
      * @param integer $page
      * @param array   $options
      */
-    public function search($query, $limit = null, $page = null, array $options = array()) {
-        $defaultOptions = array('query' => $query);
+    public function search($query, $limit = null, $page = null, array $options = []) {
+        $defaultOptions = ['query' => $query];
 
         if ($limit) {
             $defaultOptions['limit'] = $limit;
@@ -219,8 +219,8 @@ class Client extends ServiceClient {
      * @param string  $filter
      * @param array   $options
      */
-    public function fetchAssets($limit = null, $page = null, $filter = null, array $options = array()) {
-        $defaultOptions = array();
+    public function fetchAssets($limit = null, $page = null, $filter = null, array $options = []) {
+        $defaultOptions = [];
 
         if ($limit) {
             $defaultOptions['limit'] = $limit;
@@ -248,8 +248,8 @@ class Client extends ServiceClient {
      * @param string|null $additional comma-separated additional parameters to be included
      * @param array   $options
      */
-    public function fetchAsset($assetId, $additional = null, array $options = array()) {
-        $defaultOptions = array('assetId' => $assetId);
+    public function fetchAsset($assetId, $additional = null, array $options = []) {
+        $defaultOptions = ['assetId' => $assetId];
 
         if ($additional) {
             $defaultOptions['additional'] = $additional;
@@ -268,20 +268,20 @@ class Client extends ServiceClient {
      * @param  array|Collection $config Configuration data
      * @return Client
      */
-    public static function factory($config = array()) {
+    public static function factory($config = []) {
         $provider = (isset($config['provider']) ? $config['provider'] : '');
         $appName = (isset($config['appName']) ? $config['appName'] : '');
         $publicKey = (isset($config['publicKey']) ? $config['publicKey'] : '');
         $privateKey = (isset($config['privateKey']) ? $config['privateKey'] : '');
 
-        $defaults = array(
+        $defaults = [
             'apiUrl'          => self::API_URL,
             'apiVersion'      => self::API_VERSION,
-            'command.params' => array(
+            'command.params' => [
                 'provider' => $provider,
                 'appName' => $appName,
-            )
-        );
+            ]
+        ];
 
         /* Set public and private keys if provided */
         if ($publicKey) {
@@ -291,12 +291,12 @@ class Client extends ServiceClient {
             $defaults['privateKey'] = $privateKey;
         }
 
-        $required = array(
+        $required = [
             'apiUrl',
             'apiVersion',
             'provider',
             'appName'
-        );
+        ];
 
         $config = Collection::fromConfig($config, $defaults, $required);
         $client = new self($config->get('apiUrl') . '/v' . $config->get('apiVersion'), $config);
@@ -304,7 +304,7 @@ class Client extends ServiceClient {
         // Set default headers
         $client->setDefaultOption('headers/Accept', 'application/json');
         // Add client app name param to query string
-        $client->setDefaultOption('query', array('appName' => $appName));
+        $client->setDefaultOption('query', ['appName' => $appName]);
 
         // Attach a service description to the client
         $description = ServiceDescription::factory(__DIR__ . '/service.php');
@@ -321,7 +321,7 @@ class Client extends ServiceClient {
      * @param  array  $options        User-specified options to merge
      * @return mixed
      */
-    protected function runCommand($command, array $defaultOptions = array(), array $options = array()) {
+    protected function runCommand($command, array $defaultOptions = [], array $options = []) {
         $command = $this->getCommand($command, array_merge(
             $defaultOptions,
             $options

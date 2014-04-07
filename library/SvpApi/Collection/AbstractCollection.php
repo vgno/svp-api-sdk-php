@@ -30,7 +30,7 @@ class AbstractCollection implements Iterator, Countable, ArrayAccess {
      *
      * @var array
      */
-    private $items = array();
+    private $items = [];
 
     /**
      * Current page number
@@ -52,7 +52,7 @@ class AbstractCollection implements Iterator, Countable, ArrayAccess {
      * @param array $items An array of objects
      * @param array $links An array of HAL links
      */
-    public function __construct(array $items = array(), array $links = array()) {
+    public function __construct(array $items = [], array $links = []) {
         $this->items = $items;
         $this->parseHalLinks($links);
     }

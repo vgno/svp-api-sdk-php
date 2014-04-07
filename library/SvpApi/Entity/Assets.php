@@ -384,7 +384,7 @@ class Assets extends EntityAbstract implements ResponseClassInterface {
                 trigger_error($message, E_USER_WARNING);
             }
         } else {
-            $response = array();
+            $response = [];
         }
         return new self($response);
     }
