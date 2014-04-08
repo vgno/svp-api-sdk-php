@@ -11,13 +11,16 @@ namespace SvpApi\Collection;
 use Iterator;
 use Countable;
 use ArrayAccess;
+use Guzzle\Service\Command\ResponseClassInterface;
+use Guzzle\Service\Command\OperationCommand;
+use Guzzle\Common\Exception\RuntimeException;
 
 /**
  * Class AbstractCollection
  *
  * @package SvpApi\Collection
  */
-class AbstractCollection implements Iterator, Countable, ArrayAccess {
+class AbstractCollection implements Iterator, Countable, ArrayAccess, ResponseClassInterface {
     /**
      * Current position in the internal container
      *
@@ -55,6 +58,41 @@ class AbstractCollection implements Iterator, Countable, ArrayAccess {
     public function __construct(array $items = [], array $links = []) {
         $this->items = $items;
         $this->parseHalLinks($links);
+    }
+
+    /**
+     * Factory method
+     *
+     * @param OperationCommand $command The current operation
+     * @return self
+     */
+    public static function fromCommand(OperationCommand $command) {
+        $halLinks = [];
+
+        if ($command->getResponse()->getStatusCode() == 200) {
+            try {
+                $response = $command->getResponse()->json();
+                $itemsList = isset($response['_embedded'][static::COLL_NAME]) ?
+                    (array) $response['_embedded'][static::COLL_NAME] : [];
+                $halLinks = isset($response['_links']) ? (array) $response['_links'] : [];
+            } catch (RuntimeException $e) {
+                $message = 'Can\'t parse json response: %s';
+                $message = sprintf($message, $e->getMessage(), E_USER_WARNING);
+                trigger_error($message, E_USER_WARNING);
+                $itemsList = [];
+            }
+            $collection = [];
+
+            foreach ($itemsList as $item) {
+                $entityClass = '\\SvpApi\\Entity\\' . ucfirst(static::COLL_NAME);
+                $collection[] = new $entityClass($item);
+            }
+        } else {
+            $collection = [];
+        }
+
+        $collectionClass = '\\SvpApi\\Collection\\' . ucfirst(static::COLL_NAME);
+        return new $collectionClass($collection, $halLinks);
     }
 
     /**

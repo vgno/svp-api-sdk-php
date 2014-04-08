@@ -8,16 +8,13 @@
 
 namespace SvpApi\Entity;
 
-use Guzzle\Service\Command\OperationCommand;
-use Guzzle\Service\Command\ResponseClassInterface;
-
 /**
  * SVP Assets Entity
  *
  * @author
  * @copyright VG
  */
-class Assets extends EntityAbstract implements ResponseClassInterface {
+class Assets extends EntityAbstract {
     /**
      * ID
      *
@@ -150,7 +147,7 @@ class Assets extends EntityAbstract implements ResponseClassInterface {
      */
     public function setCategory($category) {
         if (is_array($category)) {
-            $this->category = new Category($category);
+            $this->category = new Categories($category);
         } else {
             $this->category = $category;
         }
@@ -365,27 +362,5 @@ class Assets extends EntityAbstract implements ResponseClassInterface {
      */
     public function getAssetType() {
         return $this->assetType;
-    }
-
-    /**
-     * Create a response model object from a completed command
-     *
-     * @param OperationCommand $command That serialized the request
-     *
-     * @return self
-     */
-    public static function fromCommand(OperationCommand $command) {
-        if ($command->getResponse()->getStatusCode() == 200) {
-            try {
-                $response = $command->getResponse()->json();
-            } catch (RuntimeException $e) {
-                $message = 'Can\'t parse json response: %s';
-                $message = sprintf($message, $e->getMessage(), E_USER_WARNING);
-                trigger_error($message, E_USER_WARNING);
-            }
-        } else {
-            $response = [];
-        }
-        return new self($response);
     }
 }

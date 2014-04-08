@@ -9,12 +9,12 @@
 namespace SvpApi\Entity;
 
 /**
- * SVP Category Entity
+ * SVP categories Entity
  *
  * @author
  * @copyright VG
  */
-class Category extends EntityAbstract {
+class Categories extends EntityAbstract {
     /**
      * ID
      *
@@ -33,6 +33,12 @@ class Category extends EntityAbstract {
      * @var int
      */
     protected $parentId;
+    /**
+     * Children array
+     *
+     * @var array
+     */
+    protected $children;
 
     /**
      * Set ID
@@ -86,5 +92,23 @@ class Category extends EntityAbstract {
      */
     public function getParentId() {
         return (int) $this->parentId;
+    }
+
+    /**
+     * Set children
+     *
+     * @param string $children 
+     */
+    public function setChildren($children) {
+        $this->children = $children;
+    }
+
+    /**
+     * Get children
+     *
+     * @return string
+     */
+    public function getChildren() {
+        return $this->children;
     }
 }

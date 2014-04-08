@@ -8,19 +8,19 @@
 
 namespace SvpApiTest\Entity;
 
-use SvpApi\Entity\Category;
+use SvpApi\Entity\Categories;
 
 /**
- * Class CategoryTest
+ * Class CategoriesTest
  *
  * @package SvpApiTest\Entity
  */
-class CategoryTest extends \PHPUnit_Framework_TestCase {
+class CategoriesTest extends \PHPUnit_Framework_TestCase {
     /**
-     *
+     * 
      */
     public function testCreateObjectWithoutProperties() {
-        $category = new Category();
+        $category = new Categories();
         $this->assertEquals(0, $category->getId());
         $this->assertEmpty($category->getTitle());
         $this->assertEquals(0, $category->getParentId());
@@ -35,7 +35,7 @@ class CategoryTest extends \PHPUnit_Framework_TestCase {
             'title' => 'foo',
             'parentId' => 69,
         );
-        $category = new Category($properties);
+        $category = new Categories($properties);
         $this->assertSame($properties['id'], $category->getId());
         $this->assertSame($properties['title'], $category->getTitle());
         $this->assertSame($properties['parentId'], $category->getParentId());

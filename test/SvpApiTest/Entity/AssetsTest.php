@@ -10,7 +10,7 @@ namespace SvpApiTest\Entity;
 
 use SvpApi\Entity\Assets\Additional;
 use SvpApi\Entity\Assets;
-use SvpApi\Entity\Category;
+use SvpApi\Entity\Categories;
 use SvpApi\Entity\Images;
 
 /**
@@ -46,7 +46,7 @@ class AssetsTest extends \PHPUnit_Framework_TestCase {
                 'assetType' => 'video',
                 'status' => 'active',
                 'articleUrl' => 'http://foo.biz',
-                'category' => new Category(),
+                'category' => new Categories(),
                 'images' => new Images(),
                 'additional' => new Additional(['settings' => ['showAds' => true,
                    'showOnAirplay' => true]]),

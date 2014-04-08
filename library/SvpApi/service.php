@@ -8,6 +8,7 @@ return [
             'httpMethod' => 'GET',
             'uri' => '{provider}/categories',
             'summary' => 'Get collection of categories',
+            'responseClass' => 'SvpApi\Collection\Categories',
             'parameters' => [
                 'provider' => [
                     'description' => 'Data provider',
@@ -21,6 +22,7 @@ return [
             'httpMethod' => 'GET',
             'uri' => '{provider}/categories/{categoryId}',
             'summary' => 'Get a Category based on ID',
+            'responseClass' => 'SvpApi\Entity\Categories',
             'parameters' => [
                 'provider' => [
                     'description' => 'Data provider',

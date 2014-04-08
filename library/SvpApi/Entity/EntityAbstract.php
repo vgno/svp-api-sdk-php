@@ -8,13 +8,15 @@
 
 namespace SvpApi\Entity;
 
+use Guzzle\Service\Command\ResponseClassInterface;
+use Guzzle\Service\Command\OperationCommand;
 /**
  * SVP EntityAbstract Entity
  *
  * @author
  * @copyright VG
  */
-abstract class EntityAbstract implements \JsonSerializable {
+abstract class EntityAbstract implements \JsonSerializable, ResponseClassInterface {
     /**
      * Construct and set properties from given array
      *
@@ -90,5 +92,28 @@ abstract class EntityAbstract implements \JsonSerializable {
             trigger_error('Undefined method "' . get_class($this) . '::' . $name . '()"',
                 E_USER_NOTICE);
         }
+    }
+
+    /**
+     * Create a response model object from a completed command
+     *
+     * @param OperationCommand $command That serialized the request
+     *
+     * @return self
+     */
+    public static function fromCommand(OperationCommand $command) {
+        if ($command->getResponse()->getStatusCode() == 200) {
+            try {
+                $response = $command->getResponse()->json();
+            } catch (RuntimeException $e) {
+                $message = 'Can\'t parse json response: %s';
+                $message = sprintf($message, $e->getMessage(), E_USER_WARNING);
+                trigger_error($message, E_USER_WARNING);
+            }
+        } else {
+            $response = [];
+        }
+        $className = ucfirst(get_called_class());
+        return new $className($response);
     }
 }
