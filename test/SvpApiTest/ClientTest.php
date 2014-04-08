@@ -112,6 +112,7 @@ class ClientTest extends GuzzleTestCase {
         $client = Client::factory($config);
         $this->setMockResponse($client, 'category_put_invalid');
         $category = $client->updateCategory(31, array('title' => 'test'));
+        $this->assertInstanceOf('SvpApi\Entity\Categories', $category);
     }
     /**
      * Test client's attempt to put valid data
@@ -121,6 +122,6 @@ class ClientTest extends GuzzleTestCase {
         $client = Client::factory($config);
         $this->setMockResponse($client, 'category_put');
         $category = $client->updateCategory(31, array('title' => 'test'));
-        $this->assertInternalType('array', $category);
+        $this->assertInstanceOf('SvpApi\Entity\Categories', $category);
     }
 }

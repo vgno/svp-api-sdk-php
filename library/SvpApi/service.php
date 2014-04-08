@@ -41,7 +41,8 @@ return [
         'categories.create' => [
             'httpMethod' => 'POST',
             'uri' => '{provider}/categories',
-            'summary' => 'Creates and get a category',
+            'summary' => 'Creates and returns category',
+            'responseClass' => 'SvpApi\Entity\Categories',
             'parameters' => [
                 'provider' => [
                     'description' => 'Data provider',
@@ -66,7 +67,8 @@ return [
         'categories.update' => [
             'httpMethod' => 'PUT',
             'uri' => '{provider}/categories/{categoryId}',
-            'summary' => 'Updates and get a Category',
+            'summary' => 'Updates and gets category',
+            'responseClass' => 'SvpApi\Entity\Categories',
             'parameters' => [
                 'provider' => [
                     'description' => 'Data provider',
@@ -254,7 +256,8 @@ return [
         'assets.create' => [
             'httpMethod' => 'POST',
             'uri' => '{provider}/assets',
-            'summary' => 'Creates and gets a category',
+            'summary' => 'Creates and gets asset',
+            'responseClass' => 'SvpApi\Entity\Assets',
             'parameters' => [
                 'provider' => [
                     'description' => 'Data provider',
@@ -268,7 +271,7 @@ return [
         'assets.update' => [
             'httpMethod' => 'PATCH',
             'uri' => '{provider}/assets/{assetId}',
-            'summary' => 'Updates and gets an asset',
+            'summary' => 'Updates and gets asset',
             'parameters' => [
                 'provider' => [
                     'description' => 'Data provider',
@@ -309,13 +312,13 @@ return [
                 'published' => [
                     'description' => 'Publication timestamp',
                     'location' => 'json',
-                    'type' => 'string',
+                    'type' => 'integer',
                     'required' => false,
                 ],
                 'duration' => [
                     'description' => 'Asset duration',
                     'location' => 'json',
-                    'type' => 'string',
+                    'type' => 'integer',
                     'required' => false,
                 ],
                 'assetType' => [
