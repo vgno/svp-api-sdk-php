@@ -33,12 +33,6 @@ class Categories extends EntityAbstract {
      * @var int
      */
     protected $parentId;
-    /**
-     * Children array
-     *
-     * @var array
-     */
-    protected $children;
 
     /**
      * Set ID
@@ -94,21 +88,4 @@ class Categories extends EntityAbstract {
         return (int) $this->parentId;
     }
 
-    /**
-     * Set children
-     *
-     * @param string $children 
-     */
-    public function setChildren($children) {
-        $this->children = $children;
-    }
-
-    /**
-     * Get children
-     *
-     * @return string
-     */
-    public function getChildren() {
-        return $this->children;
-    }
 }

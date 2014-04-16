@@ -35,7 +35,7 @@ class Categories extends AbstractCollection {
             $items = [];
             while ($this->valid()) {
                 $item = $this->current();
-                $items[$item->getId()] = $this->current();
+                $items[$item->getId()] = $item->getArrayCopy();
                 $this->next();
             }
             return $this->buildTree($items);
@@ -53,15 +53,14 @@ class Categories extends AbstractCollection {
      */
     private function buildTree(array &$elements, $parentId = 0) {
         $branch = [];
-
         foreach ($elements as $element) {
-            if ($element->getParentId() == $parentId) {
-                $children = $this->buildTree($elements, $element->getId());
+            if ($element['parentId'] == $parentId) {
+                $children = $this->buildTree($elements, $element['id']);
                 if ($children) {
-                    $element->setChildren($children);
+                    $element['children'] = $children;
                 }
-                $branch[$element->getId()] = $element;
-                unset($elements[$element->getId()]);
+                $branch[$element['id']] = $element;
+                unset($elements[$element['id']]);
             }
         }
         return $branch;
