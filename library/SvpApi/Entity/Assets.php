@@ -46,11 +46,29 @@ class Assets extends EntityAbstract {
      */
     protected $descriptionFront;
     /**
+     * Created timestamp
+     *
+     * @var integer
+     */
+    protected $created;
+    /**
+     * Updated timestamp
+     *
+     * @var integer
+     */
+    protected $updated;
+    /**
      * Published timestamp
      *
      * @var string
      */
     protected $published;
+    /**
+     * FlightTimes
+     *
+     * @var Assets\FlightTimes
+     */
+    protected $flightTimes;
     /**
      * Duration
      *
@@ -69,6 +87,12 @@ class Assets extends EntityAbstract {
      * @var string
      */
     protected $status = 'active';
+    /**
+     * Series
+     *
+     * @var Series
+     */
+    protected $series;
     /**
      * Article URL
      *
@@ -362,5 +386,69 @@ class Assets extends EntityAbstract {
      */
     public function getAssetType() {
         return $this->assetType;
+    }
+    /**
+     * Get created.
+     *
+     * @return created.
+     */
+    public function getCreated() {
+        return $this->created;
+    }
+    /**
+     * Set created.
+     *
+     * @param created the value to set.
+     */
+    public function setCreated($created) {
+        $this->created = $created;
+    }
+    /**
+     * Get updated.
+     *
+     * @return updated.
+     */
+    public function getUpdated() {
+        return $this->updated;
+    }
+    /**
+     * Set updated.
+     *
+     * @param updated the value to set.
+     */
+    public function setUpdated($updated) {
+        $this->updated = $updated;
+    }
+    /**
+     * Get flightTimes.
+     *
+     * @return Assets\FlightTimes
+     */
+    public function getFlightTimes() {
+        return $this->flightTimes;
+    }
+    /**
+     * Set flightTimes.
+     *
+     * @param array $flightTimes the value to set.
+     */
+    public function setFlightTimes($flightTimes) {
+        $this->flightTimes = new Assets\FlightTimes($flightTimes);
+    }
+    /**
+     * Get series.
+     *
+     * @return Series
+     */
+    public function getSeries() {
+        return $this->series;
+    }
+    /**
+     * Set series.
+     *
+     * @param array $series the value to set.
+     */
+    public function setSeries($series) {
+        $this->series = new Series($series);
     }
 }
