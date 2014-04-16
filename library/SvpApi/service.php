@@ -342,25 +342,25 @@ return [
                 'streamUrls' => [
                     'description' => 'Different flavour of streams available for the asset',
                     'location' => 'json',
-                    'type' => 'object',
+                    'type' => 'array',
                     'required' => false,
                 ],
                 'category' => [
                     'description' => 'Asset category',
                     'location' => 'json',
-                    'type' => 'object',
+                    'type' => 'array',
                     'required' => false,
                 ],
                 'images' => [
                     'description' => 'Images assigned to the asset',
                     'location' => 'json',
-                    'type' => 'object',
+                    'type' => 'array',
                     'required' => false,
                 ],
                 'additional' => [
                     'description' => 'Additional information regarding the asset',
                     'location' => 'json',
-                    'type' => 'object',
+                    'type' => 'array',
                     'required' => false,
                 ],
             ]
