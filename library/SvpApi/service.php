@@ -309,10 +309,28 @@ return [
                     'type' => 'string',
                     'required' => false,
                 ],
+                'created' => [
+                    'description' => 'Created timestamp',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => false,
+                ],
+                'updated' => [
+                    'description' => 'Updated timestamp',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => false,
+                ],
                 'published' => [
                     'description' => 'Publication timestamp',
                     'location' => 'json',
                     'type' => 'integer',
+                    'required' => false,
+                ],
+                'flightTimes' => [
+                    'description' => 'Period of assets availability',
+                    'location' => 'json',
+                    'type' => 'array',
                     'required' => false,
                 ],
                 'duration' => [
@@ -331,6 +349,12 @@ return [
                     'description' => 'State of the asset (active|inactive|draft)',
                     'location' => 'json',
                     'type' => 'string',
+                    'required' => false,
+                ],
+                'series' => [
+                    'description' => 'Series data',
+                    'location' => 'json',
+                    'type' => 'array',
                     'required' => false,
                 ],
                 'articleUrl' => [
