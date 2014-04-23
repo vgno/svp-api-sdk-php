@@ -33,6 +33,12 @@ class Categories extends EntityAbstract {
      * @var int
      */
     protected $parentId;
+    /**
+     * isSeries
+     *
+     * @var integer
+     */
+    protected $isSeries;
 
     /**
      * Set ID
@@ -88,4 +94,21 @@ class Categories extends EntityAbstract {
         return (int) $this->parentId;
     }
 
+    /**
+     * Get isSeries.
+     *
+     * @return isSeries.
+     */
+    public function getIsSeries() {
+        return $this->isSeries;
+    }
+
+    /**
+     * Set isSeries.
+     *
+     * @param isSeries the value to set.
+     */
+    public function setIsSeries($isSeries) {
+        $this->isSeries = $isSeries;
+    }
 }
