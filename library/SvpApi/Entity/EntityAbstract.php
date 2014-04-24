@@ -23,7 +23,7 @@ abstract class EntityAbstract implements \JsonSerializable, ResponseClassInterfa
      * @param $properties
      */
     public function __construct($properties = []) {
-        foreach ($properties as $key => $value) {
+        foreach ((array) $properties as $key => $value) {
             $method = 'set' . ucfirst($key);
             $this->$method($value);
         }
