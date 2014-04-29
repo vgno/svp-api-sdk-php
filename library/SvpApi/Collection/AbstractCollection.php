@@ -225,4 +225,17 @@ class AbstractCollection implements Iterator, Countable, ArrayAccess, ResponseCl
     public function getNextPage() {
         return $this->nextPage;
     }
+
+    public function getArrayCopy() {
+        $items = [];
+        foreach ($this->items as $item) {
+            $items[] = $item->getArrayCopy();
+        }
+        return [
+            'items' => $items,
+            'currentPage' => $this->getCurrentPage(),
+            'nextPage' => $this->getNextPage(),
+            'count' => $this->count(),
+        ];
+    }
 }
