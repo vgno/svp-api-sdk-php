@@ -39,6 +39,18 @@ class Categories extends EntityAbstract {
      * @var integer
      */
     protected $isSeries;
+    /**
+     * order
+     *
+     * @var integer
+     */
+    protected $order;
+    /**
+     * additional data
+     *
+     * @var SvpApi\Entity\Categories\Additional
+     */
+    protected $additional;
 
     /**
      * Set ID
@@ -110,5 +122,45 @@ class Categories extends EntityAbstract {
      */
     public function setIsSeries($isSeries) {
         $this->isSeries = $isSeries;
+    }
+
+    /**
+     * Get order.
+     *
+     * @return order.
+     */
+    public function getOrder() {
+        return $this->order;
+    }
+
+    /**
+     * Set order.
+     *
+     * @param order the value to set.
+     */
+    public function setOrder($order) {
+        $this->order = $order;
+    }
+
+    /**
+     * Set Additional information
+     *
+     * @param $additional Additional information
+     */
+    public function setAdditional($additional) {
+        if (is_array($additional)) {
+            $this->additional = new Categories\Additional($additional);
+        } else {
+            $this->additional = $additional;
+        }
+    }
+
+    /**
+     * Get Additional information
+     *
+     * @return string
+     */
+    public function getAdditional() {
+        return $this->additional;
     }
 }

@@ -14,6 +14,16 @@ use SvpApi\Entity\EntityAbstract;
  * SvpApi Additional Settings Entity
  */
 class Settings extends EntityAbstract {
+    /**
+     * Whether or not to show ads
+     *
+     * @var boolean
+     */
     protected $showAds;
+    /**
+     * Whether or not to show the asset on air play
+     *
+     * @var boolean
+     */
     protected $showOnAirplay;
 }

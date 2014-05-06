@@ -36,6 +36,12 @@ return [
                     'type' => 'integer',
                     'required' => true,
                 ],
+                'additional' => [
+                    'description' => 'Additional fields flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
             ]
         ],
         'categories.create' => [
@@ -60,6 +66,24 @@ return [
                     'description' => 'Id of parent category',
                     'location' => 'json',
                     'type' => 'integer',
+                    'required' => false,
+                ],
+                'isSeries' => [
+                    'description' => 'Whether or not the category is a series container',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'order' => [
+                    'description' => 'order of the category on the list',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'additional' => [
+                    'description' => 'Additional data container',
+                    'location' => 'json',
+                    'type' => 'object',
                     'required' => false,
                 ],
             ]
@@ -92,6 +116,24 @@ return [
                     'description' => 'Id of parent category',
                     'location' => 'json',
                     'type' => 'integer',
+                    'required' => false,
+                ],
+                'isSeries' => [
+                    'description' => 'Whether or not the category is a series container',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'order' => [
+                    'description' => 'order of the category on the list',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'additional' => [
+                    'description' => 'Additional data container',
+                    'location' => 'json',
+                    'type' => 'object',
                     'required' => false,
                 ],
             ]

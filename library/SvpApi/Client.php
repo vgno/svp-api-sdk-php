@@ -57,14 +57,19 @@ class Client extends ServiceClient {
      * Fetch a single category for the client based on $categoryId
      *
      * @param integer $categoryId
+     * @param boolean $additional
      * @param array   $options
      */
-    public function fetchCategory($categoryId, array $options = []) {
+    public function fetchCategory($categoryId, $additional = false, array $options = []) {
+        $defaultOptions = ['categoryId' => $categoryId];
+
+        if ($additional) {
+            $defaultOptions['additional'] = 'true';
+        }
+
         return $this->runCommand(
             'categories.fetch',
-            [
-                'categoryId' => $categoryId
-            ],
+            $defaultOptions,
             $options
         );
     }
