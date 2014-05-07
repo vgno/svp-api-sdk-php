@@ -14,6 +14,58 @@ use SvpApi\Entity\EntityAbstract;
  */
 class Additional extends EntityAbstract {
     /**
+     * @var string $description
+     */
+    protected $description;
+    /**
+     * @var string $image
+     */
+    protected $image;
+    /**
+     * @var integer $isImageUploaded
+     */
+    protected $isImageUploaded;
+    /**
+     * @var string $logo
+     */
+    protected $logo;
+    /**
+     * @var string $background
+     */
+    protected $background;
+    /**
+     * @var string $backgroundColor
+     */
+    protected $backgroundColor;
+    /**
+     * @var integer $showPlayerLogo
+     */
+    protected $showPlayerLogo;
+    /**
+     * @var string $playerLogoImage
+     */
+    protected $playerLogoImage;
+    /**
+     * @var integer $showEndPoster 
+     */
+    protected $showEndPoster;
+    /**
+     * @var integer $showCategory
+     */
+    protected $showCategory;
+    /**
+     * @var integer $showComments
+     */
+    protected $showComments;
+    /**
+     * @var integer $allowAllDevices
+     */
+    protected $allowAllDevices;
+    /**
+     * @var SvpApi\Entity\Categories\Additional\PlayerBranding $playerBranding
+     */
+    protected $playerBranding;
+    /**
      * Override the constructor
      *
      * @override parent::__construct()
