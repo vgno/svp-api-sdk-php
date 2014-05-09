@@ -356,8 +356,10 @@ class Client extends ServiceClient {
         /* Operate on command's clone to avoid changing its state prematurely */
         $commandClone = clone $command;
         $commandClone->prepare();
+        $url = $commandClone->getRequest()->getUrl();
+        $url = preg_replace('/(\?|\&)(appName)\=([^&]+)/', '$1$2', $url);
         return hash_hmac('sha256', $commandClone->getOperation()->getHttpMethod() .
-            urldecode($commandClone->getRequest()->getUrl()), $this->getConfig('privateKey')
+            urldecode($url), $this->getConfig('privateKey')
         );
     }
 }
