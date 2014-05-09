@@ -114,6 +114,13 @@ class AbstractCollection implements Iterator, Countable, ArrayAccess, ResponseCl
     }
 
     /**
+     * Remove current item
+     */
+    public function delete() {
+        unset($this->items[$this->position]);
+    }
+
+    /**
      * Fetch the current position
      *
      * @return int
