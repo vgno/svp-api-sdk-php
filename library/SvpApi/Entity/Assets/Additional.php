@@ -26,6 +26,10 @@ class Additional extends EntityAbstract {
      */
     protected $barrels;
     /**
+     * @var \SvpApi\Entity\Assets\Additional\Chapters $chapters
+     */
+    protected $chapters;
+    /**
      * Override the constructor
      *
      * @override parent::__construct()
@@ -34,8 +38,8 @@ class Additional extends EntityAbstract {
     public function __construct(array $additionalData) {
         foreach ($additionalData as $key => $value) {
             if (is_array($value)) {
-                $entityClassName = '\\SvpApi\\Entity\\Assets\\Additional\\' . ucfirst($key);
-                $this->{$key} = new $entityClassName($value);
+                $className = '\\SvpApi\\Entity\\Assets\\Additional\\' . ucfirst($key);
+                $this->{$key} = new $className($value);
             } else {
                 $this->{$key} = $value;
             }

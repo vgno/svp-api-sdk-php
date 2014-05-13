@@ -7,10 +7,15 @@
  */
 
 namespace SvpApi\Entity\Assets\Additional;
-use SvpApi\Entity\EntityAbstract;
-
 
 /**
  * SvpApi Additional chapters Entity
  */
-class Chapters extends EntityAbstract {}
+class Chapters extends \ArrayObject implements \JsonSerializable {
+    /**
+     * Specify data which should be serialized to JSON
+     */
+    public function jsonSerialize() {
+        return $this->getArrayCopy();
+    }
+}
