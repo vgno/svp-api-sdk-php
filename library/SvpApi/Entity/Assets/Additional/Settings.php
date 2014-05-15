@@ -20,10 +20,4 @@ class Settings extends EntityAbstract {
      * @var boolean
      */
     protected $showAds;
-    /**
-     * Whether or not to show the asset on air play
-     *
-     * @var boolean
-     */
-    protected $showOnAirplay;
 }
