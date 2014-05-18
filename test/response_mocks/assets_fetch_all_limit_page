@@ -1,0 +1,93 @@
+HTTP/1.1 200 OK
+Date: Thu, Wed, 19 Mar 2014 14:53:47 GMT
+Connection: keep-alive
+Content-Type: application/json
+
+{
+  "_links": {
+    "self": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/assets?limit=2&page=3"
+    },
+    "next": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/assets?limit=2&page=4"
+    }
+  },
+  "_embedded": {
+    "assets": [
+      {
+        "id": 82244,
+        "title": "Se Genoas mål som senket Roma",
+        "titleFront": null,
+        "description": null,
+        "descriptionFront": null,
+        "displays": 384,
+        "created": 1400427360,
+        "updated": 1400427947,
+        "published": 1400427360,
+        "flightTimes": null,
+        "duration": 92000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 79,
+          "title": "Italiensk Serie A",
+          "parentId": 52,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/1bda58cfd556bd3f8dfc9c37f87f3966",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/82244"
+          }
+        }
+      },
+      {
+        "id": 82239,
+        "title": "Han slår motstanderen ut av bokseringen",
+        "titleFront": null,
+        "description": "40 år gamle Juan Manuel Marquez slo Mike Alvarado (33) regelrett ut av bokseringen i nattens oppgjør i California.",
+        "descriptionFront": null,
+        "displays": 19490,
+        "created": 1400411700,
+        "updated": 1400412254,
+        "published": 1400411700,
+        "flightTimes": null,
+        "duration": 141000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 130,
+          "title": "Boksing",
+          "parentId": 3,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/d4115e3a8639e0c6756959ea3a9434a5",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/82239"
+          }
+        }
+      }
+    ]
+  }
+}
