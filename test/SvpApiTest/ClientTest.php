@@ -55,21 +55,9 @@ class ClientTest extends GuzzleTestCase {
      * Test fetch assets collection
      */
     public function testFetchAssets() {
-        $this->setMockResponse($this->client, 'assets_fetch_all');
-        /** @var AssetsCollection $collection */
-        $collection = $this->client->fetchAssets();
-        $this->assertInstanceOf('SvpApi\Collection\Assets', $collection);
-        $this->assertGreaterThan(0, $collection->count());
-        $this->assertNull($collection->getCurrentPage());
-        $this->assertNotNull($collection->getNextPage());
-
-        /** @var AssetsEntity $assets */
-        foreach ($collection as $assets) {
-            $this->assertInstanceOf('SvpApi\Entity\Assets', $assets);
-            $assets = $collection->current();
-            $this->assertNotNull($assets->getId());
-            $this->assertNotEmpty($assets->getTitle());
-        }
+        $this->fetchAssetsTest(function() {
+            return $this->client->fetchAssets();
+        }, 'assets_fetch_all');
     }
 
     /**
