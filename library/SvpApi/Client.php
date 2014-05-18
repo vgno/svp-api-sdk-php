@@ -156,6 +156,32 @@ class Client extends ServiceClient {
     }
 
     /**
+     * Fetch assets for a single barrel for the client based on $barrelId
+     *
+     * @param integer $barrelId
+     * @param integer $limit
+     * @param integer $page
+     * @param array   $options
+     */
+    public function fetchBarrelAssets($barrelId, $limit = null, $page = null, array $options = []) {
+        $defaultOptions = ['barrelId' => $barrelId];
+
+        if ($limit) {
+            $defaultOptions['limit'] = $limit;
+        }
+
+        if ($page) {
+            $defaultOptions['page'] = $page;
+        }
+
+        return $this->runCommand(
+            'barrel.fetchAssets',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
      * Fetch assets for a single category for the client based on $categoryId
      *
      * @param string  $inteval

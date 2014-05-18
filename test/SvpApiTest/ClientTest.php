@@ -9,6 +9,7 @@
 namespace SvpApiTest;
 
 use Guzzle\Tests\GuzzleTestCase;
+use Guzzle\Common\Event;
 use SvpApi\Client;
 use SvpApi\Collection\Assets as AssetsCollection;
 use SvpApi\Entity\Assets as AssetsEntity;
@@ -114,6 +115,7 @@ class ClientTest extends GuzzleTestCase {
         $category = $client->updateCategory(31, array('title' => 'test'));
         $this->assertInstanceOf('SvpApi\Entity\Categories', $category);
     }
+
     /**
      * Test client's attempt to put valid data
      */
@@ -123,5 +125,75 @@ class ClientTest extends GuzzleTestCase {
         $this->setMockResponse($client, 'category_put');
         $category = $client->updateCategory(31, array('title' => 'test'));
         $this->assertInstanceOf('SvpApi\Entity\Categories', $category);
+    }
+
+    /**
+     * Test fetch assets by barrel id
+     */
+    public function testFetchBarrelAssets() {
+        $this->fetchAssetsTest(function() {
+            return $this->client->fetchBarrelAssets(67);
+        }, 'barrel_fetch');
+    }
+
+    /**
+     * Test fetch assets by barrel id with limit and page
+     */
+    public function testFetchBarrelAssetsWithLimitAndPage() {
+        $this->fetchAssetsTest(function() {
+                return $this->client->fetchBarrelAssets(67, 2, 4);
+        }, 'barrel_fetch_limit_page', 2, 4);
+    }
+
+    /**
+     * Helper method for testing fetching of assets
+     *
+     * @param callable $method Method to test
+     * @param string $mockFile Mock file
+     * @param null|int $limit Limit
+     * @param null|int $page Page
+     */
+    private function fetchAssetsTest(callable $method, $mockFile, $limit = null, $page = null) {
+        $this->setMockResponse($this->client, $mockFile);
+
+        $this->client->getEventDispatcher()->addListener('request.before_send', function(Event $e) use($limit, $page) {
+            $data = $e['request']->getUrl(true)->getQuery()->toArray();
+
+            if ($limit !== null) {
+                $this->assertEquals($data['limit'], (string) $limit);
+            }
+
+            if ($page !== null) {
+                $this->assertEquals($data['page'], (string) $page);
+            }
+        });
+
+        $collection = $method->__invoke();
+
+        $this->assertInstanceOf('SvpApi\Collection\Assets', $collection);
+
+        if ($limit !== null) {
+            $this->assertEquals($limit, $collection->count());
+        } else {
+            $this->assertGreaterThan(0, $collection->count());
+        }
+
+        if ($page === null || $page == 1) {
+            $this->assertNull($collection->getCurrentPage());
+        } else {
+            $this->assertNotNull($collection->getCurrentPage());
+        }
+
+        $this->assertNotNull($collection->getNextPage());
+
+        /** @var AssetsEntity $assets */
+        foreach ($collection as $assets) {
+            $this->assertInstanceOf('SvpApi\Entity\Assets', $assets);
+
+            $assets = $collection->current();
+
+            $this->assertNotNull($assets->getId());
+            $this->assertNotEmpty($assets->getTitle());
+        }
     }
 }

@@ -1,0 +1,93 @@
+HTTP/1.1 200 OK
+Date: Thu, Wed, 19 Mar 2014 14:53:47 GMT
+Connection: keep-alive
+Content-Type: application/json
+
+{
+  "_links": {
+    "self": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/barrel/67?limit=2&page=3"
+    },
+    "next": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/barrel/67?limit=2&page=4"
+    }
+  },
+  "_embedded": {
+    "assets": [
+      {
+        "id": 81744,
+        "title": "Sjekk det nydelige langskuddet som avgjorde for Bodø/Glimt",
+        "titleFront": null,
+        "description": "Det ble en sjanserik kamp da Bodø/Glimt i dag tok imot Haugesund på Aspmyra Stadion.  Til slutt vant vertene 2-1, etter at et superskudd av Abdurahim «Ibba» Laajab hadde gitt dem en tidlig ledelse.",
+        "descriptionFront": null,
+        "displays": 3141,
+        "created": 1399738620,
+        "updated": 1399738303,
+        "published": 1399738620,
+        "flightTimes": null,
+        "duration": 126000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 237,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/881e64c2221cb5d61a83243c971df243",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/81744"
+          }
+        }
+      },
+      {
+        "id": 81381,
+        "title": "Blodig Londak måtte ut etter duell med Júnior",
+        "titleFront": null,
+        "description": "Bodø/Glimts keeper Pavel Londak fikk et dypt kutt i ansiktet etter et ublidt møte med fotballskoen til Strømsgodsets Francisco Júnior.",
+        "descriptionFront": null,
+        "displays": 1903,
+        "created": 1399230000,
+        "updated": 1399227157,
+        "published": 1399230000,
+        "flightTimes": null,
+        "duration": 81000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 237,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/b2aa346ca45627c7aeae8cea3078d46c",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/81381"
+          }
+        }
+      }
+    ]
+  }
+}
