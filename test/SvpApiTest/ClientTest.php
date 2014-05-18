@@ -175,7 +175,7 @@ class ClientTest extends GuzzleTestCase {
         if ($limit !== null) {
             $this->assertEquals($limit, $collection->count());
         } else {
-            $this->assertGreaterThan(0, $collection->count());
+            $this->assertEquals(10, $collection->count());
         }
 
         if ($page === null || $page == 1) {
