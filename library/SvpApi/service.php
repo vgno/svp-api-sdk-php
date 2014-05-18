@@ -365,5 +365,38 @@ return [
                 ],
             ]
         ],
+
+        'barrel.fetchAssets' => [
+            'httpMethod' => 'GET',
+            'uri' => '{provider}/assets/barrel/{barrelId}',
+            'responseClass' => 'SvpApi\Collection\Assets',
+            'summary' => 'Get barrel by ID with assets collection',
+            'parameters' => [
+                'provider' => [
+                    'description' => 'Data provider',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                'barrelId' => [
+                    'description' => 'Id of barrel',
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'limit' => [
+                    'description' => 'The maximum number of results to return',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+                'page' => [
+                    'description' => 'Page number',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+            ]
+        ],
     ],
 ];
