@@ -141,8 +141,8 @@ class ClientTest extends GuzzleTestCase {
      */
     public function testFetchBarrelAssetsWithLimitAndPage() {
         $this->fetchAssetsTest(function() {
-                return $this->client->fetchBarrelAssets(67, 2, 4);
-        }, 'barrel_fetch_limit_page', 2, 4);
+            return $this->client->fetchBarrelAssets(67, 2, 3);
+        }, 'barrel_fetch_limit_page', 2, 3);
     }
 
     /**
