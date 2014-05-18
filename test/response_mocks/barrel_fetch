@@ -1,0 +1,389 @@
+HTTP/1.1 200 OK
+Date: Thu, Wed, 19 Mar 2014 14:53:47 GMT
+Connection: keep-alive
+Content-Type: application/json
+
+{
+  "_links": {
+    "self": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/barrel/67"
+    },
+    "next": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/barrel/67?page=2"
+    }
+  },
+  "_embedded": {
+    "assets": [
+      {
+        "id": 81744,
+        "title": "Sjekk det nydelige langskuddet som avgjorde for Bodø/Glimt",
+        "titleFront": null,
+        "description": "Det ble en sjanserik kamp da Bodø/Glimt i dag tok imot Haugesund på Aspmyra Stadion.  Til slutt vant vertene 2-1, etter at et superskudd av Abdurahim «Ibba» Laajab hadde gitt dem en tidlig ledelse.",
+        "descriptionFront": null,
+        "displays": 3141,
+        "created": 1399738620,
+        "updated": 1399738303,
+        "published": 1399738620,
+        "flightTimes": null,
+        "duration": 126000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 237,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/881e64c2221cb5d61a83243c971df243",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/81744"
+          }
+        }
+      },
+      {
+        "id": 81381,
+        "title": "Blodig Londak måtte ut etter duell med Júnior",
+        "titleFront": null,
+        "description": "Bodø/Glimts keeper Pavel Londak fikk et dypt kutt i ansiktet etter et ublidt møte med fotballskoen til Strømsgodsets Francisco Júnior.",
+        "descriptionFront": null,
+        "displays": 1903,
+        "created": 1399230000,
+        "updated": 1399227157,
+        "published": 1399230000,
+        "flightTimes": null,
+        "duration": 81000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 237,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/b2aa346ca45627c7aeae8cea3078d46c",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/81381"
+          }
+        }
+      },
+      {
+        "id": 79382,
+        "title": "Hva driver Glimt-keeperen med her?",
+        "titleFront": null,
+        "description": "Bodø/Glimts keeper Pavel Londak slapp med skrekken da han rushet langt utenfor sekstenmeteren i starten av oppgjøret mot Aalesund, som til slutt endte 1-1.",
+        "descriptionFront": null,
+        "displays": 4787,
+        "created": 1396208220,
+        "updated": 1396208191,
+        "published": 1396208220,
+        "flightTimes": null,
+        "duration": 177000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 237,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/88fa56ce6f57b64fe1daed66701c781a",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/79382"
+          }
+        }
+      },
+      {
+        "id": 79372,
+        "title": "Glimt-keeper på bærtur",
+        "titleFront": null,
+        "description": "Glimt-keeper Londak prøvde forgjeves å fange ballen langt ute på banen. Ballen glapp, og Braaten måtte steppe inn og redde returmålet.",
+        "descriptionFront": null,
+        "displays": 3260,
+        "created": 1396206900,
+        "updated": 1396206887,
+        "published": 1396206900,
+        "flightTimes": null,
+        "duration": 43000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 237,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/1ceff203fcafb6819d833dce7639f0fe",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/79372"
+          }
+        }
+      },
+      {
+        "id": 79366,
+        "title": "Så nære var Glimt seier",
+        "titleFront": null,
+        "description": "I det 90. minutt fikk Jim Johansen en kjempesjanse til å sikre Bodø/Glimt tre poeng mot Aalesund. Kampen endte 1-1.",
+        "descriptionFront": null,
+        "displays": 1555,
+        "created": 1396206000,
+        "updated": 1396205700,
+        "published": 1396206000,
+        "flightTimes": null,
+        "duration": 71000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 237,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/85b8a2fb2579dce74ee01472b39d6972",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/79366"
+          }
+        }
+      },
+      {
+        "id": 78748,
+        "title": "VG spår Tippeligaen. Nummer 10: Bodø/Glimt",
+        "titleFront": null,
+        "description": "VGs mest kunnskapsrike på norsk fotball har vurdert utfallet av Tippeligaen 2014. Hver dag fremover avslører vi én ny tabellplassering.",
+        "descriptionFront": null,
+        "displays": 2967,
+        "created": 1395300300,
+        "updated": 1395300240,
+        "published": 1395300300,
+        "flightTimes": null,
+        "duration": 177000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 52,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/26c51b59b6e6e33341cdbb4aa77f46b7",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/78748"
+          }
+        }
+      },
+      {
+        "id": 73137,
+        "title": "Bodø Glimt med kalasseier",
+        "titleFront": null,
+        "description": "Målfest! FK Bodø/Glimt vant 8-0 over Kongsvinger IL!",
+        "descriptionFront": null,
+        "displays": 6388,
+        "created": 1382911740,
+        "updated": 1382912031,
+        "published": 1382911740,
+        "flightTimes": null,
+        "duration": 147000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 238,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/c2bfed6f4d532a5f3733a60ca2a7d2c3",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/73137"
+          }
+        }
+      },
+      {
+        "id": 21427,
+        "title": "VG-lupen: Bodø/Glimt på 10. plass",
+        "titleFront": null,
+        "description": "VG mener Bodø/Glimt vil ende på 10. plass i årets eliteserie.",
+        "descriptionFront": null,
+        "displays": 9032,
+        "created": 1236166860,
+        "updated": 1236166943,
+        "published": 1236166860,
+        "flightTimes": null,
+        "duration": 193000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 52,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/deeed94bb30dc27389fbdbaf268e70ef",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/21427"
+          }
+        }
+      },
+      {
+        "id": 15231,
+        "title": "VG-lupen: Bodø/Glimt på 14. plass",
+        "titleFront": null,
+        "description": "VGs fotballekspert Knut Svegaarden begrunner hvorfor VG tror Bodø/Glimt rykker ned når tippeligaen 2008 er gjort opp.",
+        "descriptionFront": null,
+        "displays": 175,
+        "created": 1205419677,
+        "updated": 1205419687,
+        "published": 1205419677,
+        "flightTimes": null,
+        "duration": 277000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 52,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/03a38a1b58fb59306c1239639582764e",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/15231"
+          }
+        }
+      },
+      {
+        "id": 12380,
+        "title": "Runar Berg tror Bodø/Glimt har gode sjanser til opprykk",
+        "titleFront": null,
+        "description": "Bodø/Glimt skal møte Odd i kvalifiseringskamper for å sikre opprykk til eliteserien.",
+        "descriptionFront": null,
+        "displays": 142,
+        "created": 1194244706,
+        "updated": 1194249187,
+        "published": 1194244706,
+        "flightTimes": null,
+        "duration": 52000,
+        "assetType": "video",
+        "status": "active",
+        "series": null,
+        "articleUrl": null,
+        "streamUrls": null,
+        "category": {
+          "id": 52,
+          "title": null,
+          "parentId": 0,
+          "isSeries": 0,
+          "order": 0,
+          "stats": null,
+          "additional": null
+        },
+        "images": {
+          "main": "http://imbo.vgtv.no/users/vgtv/images/771b77dbc06da761b8d2f8cbab923dba",
+          "front": null
+        },
+        "additional": {},
+        "_links": {
+          "self": {
+            "href": "http://svp.vg.no/svp/api/v1/vgtv/assets/12380"
+          }
+        }
+      }
+    ]
+  }
+}
