@@ -72,6 +72,15 @@ class ClientTest extends GuzzleTestCase {
     }
 
     /**
+     * Test fetch assets collection with limit and page
+     */
+    public function testFetchAssetsWithLimitAndPage() {
+        $this->fetchAssetsTest(function() {
+            return $this->client->fetchAssets(2, 3);
+        }, 'assets_fetch_all_limit_page', 2, 3);
+    }
+
+    /**
      * Test fetch assets collection returned invalid json
      * @expectedException PHPUnit_Framework_Error
      */
