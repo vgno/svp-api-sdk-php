@@ -196,9 +196,10 @@ class Client extends ServiceClient {
      * @param string  $query
      * @param integer $limit
      * @param integer $page
+     * @param filter $filter
      * @param array   $options
      */
-    public function search($query, $limit = null, $page = null, array $options = []) {
+    public function search($query, $limit = null, $page = null, $filter = null, array $options = []) {
         $defaultOptions = ['query' => $query];
 
         if ($limit) {
@@ -207,6 +208,10 @@ class Client extends ServiceClient {
 
         if ($page) {
             $defaultOptions['page'] = $page;
+        }
+
+        if ($filter) {
+            $defaultOptions['filter'] = $filter;
         }
 
         return $this->runCommand(

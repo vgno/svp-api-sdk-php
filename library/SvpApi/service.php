@@ -205,7 +205,8 @@ return [
 
         'search' => [
             'httpMethod' => 'GET',
-            'uri' => '{provider}/search',
+            'uri' => '{provider}/search?query={query}',
+            'responseClass' => 'SvpApi\Collection\Assets',
             'summary' => 'Get a searching result',
             'parameters' => [
                 'provider' => [
@@ -228,6 +229,12 @@ return [
                 ],
                 'page' => [
                     'description' => 'Page number',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+                'filter' => [
+                    'description' => 'Filter',
                     'location' => 'query',
                     'type' => 'string',
                     'required' => false,
