@@ -1,0 +1,344 @@
+HTTP/1.1 200 OK
+Date: Thu, Wed, 19 Mar 2014 14:53:47 GMT
+Connection: keep-alive
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Nyheter",
+  "parentId": 214,
+  "assets": [
+    {
+      "id": 82278,
+      "title": "Derfor elsker nordmenn tyske aksjer",
+      "titleFront": null,
+      "description": "Andreas Thøgersen i Nordic Securities forteller at de fortsatt er positive til norske aksjer, men at kunder nå i større og større grad ønsker å vedde mot markedet i forsøk på å finne toppen.",
+      "descriptionFront": null,
+      "displays": 279,
+      "created": 1400494620,
+      "updated": 1400494684,
+      "published": 1400494620,
+      "flightTimes": null,
+      "duration": 744000,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 169,
+        "title": "E24",
+        "parentId": 1,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/0e4712e92c1e2ead80a0c9ee2f7edaa4",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82276,
+      "title": "Opptak: Jonas Gahr Støre innstilt som ny Ap-leder",
+      "titleFront": null,
+      "description": "Partisekretær Martin Kolberg presenterte mandag Jonas Gahr Støre som valgkomiteen i Arbeiderpartiet sin kandidat til ny partileder.",
+      "descriptionFront": null,
+      "displays": 3044,
+      "created": 1400486520,
+      "updated": 1400493624,
+      "published": 1400486520,
+      "flightTimes": null,
+      "duration": 0,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/368305be91d2ba87f2f31afd3657b445",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82260,
+      "title": "Sjokkerende funn: Her graver de frem verdens største dinosaur",
+      "titleFront": null,
+      "description": "Det er ansatte ved det paleontologiske museet Egidio Feruglio som har gjort det sjokkerende dinosaurfunnet. Fredag 16. mai tok de med seg pressen ut i ørkenen for å vise frem kjempeknoklene. Siden har utgraverne blitt nedringt av medier verden rundt.",
+      "descriptionFront": null,
+      "displays": 19965,
+      "created": 1400441760,
+      "updated": 1400441801,
+      "published": 1400441760,
+      "flightTimes": null,
+      "duration": 93000,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/9f414e585c7eebd94312e5f7c77e6592",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82064,
+      "title": "Rekordholder Howard leser hele Grunnloven på 1 minutt og 13 sekunder",
+      "titleFront": null,
+      "description": "Howard Berg (65) fra USA er verdens raskeste leser. I 1990 kom han i Guinness rekordbok for å ha lest 80 sider på ett minutt. Ingen har klart å slå den rekorden siden. VGTV utfordret rekordholderen til å lese den norske Grunnloven.",
+      "descriptionFront": null,
+      "displays": 20665,
+      "created": 1400350020,
+      "updated": 1400350011,
+      "published": 1400350020,
+      "flightTimes": null,
+      "duration": 125000,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/78144e6ab3f78b7331cc8cf66f22dc38",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82227,
+      "title": "Folkets 17. mai-tale fra Oslos vestkant: - Takk for fine damer",
+      "titleFront": null,
+      "description": "VGTV tok turen til Solli plass på Frogner for å la folket fremføre sin egen 17. mai-tale til Norge. Blant tingene folket ønsket å takke landet for, var gratis helsehjelp, fjorder og fjell og sist men ikke minst - fine damer.",
+      "descriptionFront": null,
+      "displays": 29031,
+      "created": 1400346900,
+      "updated": 1400347645,
+      "published": 1400346900,
+      "flightTimes": null,
+      "duration": 110000,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/6788e2ae53dd1922bf29f5b47b619b7e",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82023,
+      "title": "Dette er opphavet til alle mannskor",
+      "titleFront": null,
+      "description": "Dette er en historie om kameratskap, glede og sorg. Om menn som gjennom sangen finner sammen på tvers av alder og bakgrunn. Karl Johan koret er koret der ingen slutter, men der hver mann synger til naturen sier stopp.\r\n\r\nDette er koret som sammen med Håndverkerne og Studentene urfremførte «Ja vi elsker» i 1864. I år, på grunnlovsjubileet samles de igjen. Samme plass, og samme sang.",
+      "descriptionFront": null,
+      "displays": 3837,
+      "created": 1400334660,
+      "updated": 1400334810,
+      "published": 1400334660,
+      "flightTimes": null,
+      "duration": 504000,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/22c51c3e067a74d04dd99f04b02fa28c",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82221,
+      "title": "Minister skal ha omkommet i flystyrt i Laos",
+      "titleFront": null,
+      "description": "Laos' forsvarsminister og visestatsminister Douangchay Phichit omkom i en flystyrt nord i landet, ifølge medier i nabolandet Thailand.",
+      "descriptionFront": null,
+      "displays": 1052,
+      "created": 1400322840,
+      "updated": 1400322808,
+      "published": 1400322840,
+      "flightTimes": null,
+      "duration": 43000,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/94822124242286ec9cdc5f45959fe3eb",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82220,
+      "title": "Dagens frekkeste: Hva har du under bunaden?",
+      "titleFront": null,
+      "description": "VGTVs reporter kastet seg ut i folkehavet på Karl Johan i Oslo 17. mai og spurte folk om hva de har under bunaden på nasjonaldagen. Folk svarte ærlig.",
+      "descriptionFront": null,
+      "displays": 65941,
+      "created": 1400322240,
+      "updated": 1400322302,
+      "published": 1400322240,
+      "flightTimes": null,
+      "duration": 142000,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/52206f94b4d825de35350f113584af28",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82150,
+      "title": "Opptak: Gjestene ankommer Eidsvollsbygningen",
+      "titleFront": null,
+      "description": "VGTV sender direkte fra 17. mai-feiringen på Eidsvollsbygningen klokken 18.30. Foto: Scanpix.",
+      "descriptionFront": null,
+      "displays": 990,
+      "created": 1400275920,
+      "updated": 1400346331,
+      "published": 1400275920,
+      "flightTimes": null,
+      "duration": 0,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/fe90bb33408d941ec012adf7357904f3",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82146,
+      "title": "OPPTAK: 17. mai på Skaugum",
+      "titleFront": null,
+      "description": "VGTV sender direkte fra 17. mai-feiringen på Skaugum klokken 07:45. Foto: Scanpix.",
+      "descriptionFront": null,
+      "displays": 14354,
+      "created": 1400275320,
+      "updated": 1400311745,
+      "published": 1400275320,
+      "flightTimes": null,
+      "duration": 0,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/105919712f4ed73f4d2b5e90e7a8fcf9",
+        "front": null
+      },
+      "additional": {}
+    }
+  ],
+  "isSeries": 0,
+  "order": 0,
+  "stats": null,
+  "additional": null,
+  "_links": {
+    "self": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/categories/1/assets"
+    },
+    "next": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/categories/1/assets?page=2"
+    }
+  }
+}

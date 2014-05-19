@@ -31,7 +31,15 @@ class Assets extends AbstractCollection implements ResponseClassInterface {
         if ($command->getResponse()->getStatusCode() == 200) {
             try {
                 $response = $command->getResponse()->json();
-                $itemsList = isset($response['_embedded']['assets']) ? (array) $response['_embedded']['assets'] : [];
+
+                if (isset($response['_embedded']['assets'])) {
+                    $itemsList = (array) $response['_embedded']['assets'];
+                } else if (isset($response['assets'])) {
+                    $itemsList = (array) $response['assets'];
+                } else {
+                    $itemsList = [];
+                }
+
                 $halLinks = isset($response['_links']) ? (array) $response['_links'] : [];
             } catch (RuntimeException $e) {
                 $message = 'Can\'t parse json response: %s';
