@@ -46,6 +46,12 @@ class Assets extends EntityAbstract {
      */
     protected $descriptionFront;
     /**
+     * Number of displays
+     *
+     * @var integer
+     */
+    protected $displays;
+    /**
      * Created timestamp
      *
      * @var integer
@@ -238,6 +244,24 @@ class Assets extends EntityAbstract {
      */
     public function getDescriptionFront() {
         return $this->descriptionFront;
+    }
+
+    /**
+     * Set the number of displays
+     *
+     * @param integer
+     */
+    public function setDisplays($displays) {
+        $this->displays = $displays;
+    }
+
+    /**
+     * Get the number of displays
+     *
+     * @return integer
+     */
+    public function getDisplays() {
+        return $this->displays;
     }
 
     /**
