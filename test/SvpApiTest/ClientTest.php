@@ -116,6 +116,24 @@ class ClientTest extends GuzzleTestCase {
     }
 
     /**
+     * Test fetch of assets from category endpoint
+     */
+    public function testFetchCategoryAssets() {
+        $this->fetchAssetsTest(function() {
+            return $this->client->fetchCategoryAssets(1);
+        }, 'category_assets_fetch');
+    }
+
+    /**
+     * Test fetch of assets from category endpoint with limit and page
+     */
+    public function testFetchCategoryAssetsWithLimitAndPage() {
+        $this->fetchAssetsTest(function() {
+            return $this->client->fetchCategoryAssets(1, 2, 3);
+        }, 'category_assets_fetch_limit_page', 2, 3);
+    }
+
+    /**
      * Test fetch assets by barrel id
      */
     public function testFetchBarrelAssets() {

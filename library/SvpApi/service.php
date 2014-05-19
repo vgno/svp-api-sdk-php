@@ -101,6 +101,7 @@ return [
             'httpMethod' => 'GET',
             'uri' => '{provider}/categories/{categoryId}/assets',
             'summary' => 'Get category by ID with assets collection',
+            'responseClass' => 'SvpApi\Collection\Assets',
             'parameters' => [
                 'provider' => [
                     'description' => 'Data provider',
@@ -118,7 +119,7 @@ return [
                     'description' => 'The maximum number of results to return',
                     'location' => 'query',
                     'type' => 'string',
-                    'required' => true,
+                    'required' => false,
                 ],
                 'page' => [
                     'description' => 'Page number',

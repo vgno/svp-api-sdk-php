@@ -1,0 +1,88 @@
+HTTP/1.1 200 OK
+Date: Thu, Wed, 19 Mar 2014 14:53:47 GMT
+Connection: keep-alive
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Nyheter",
+  "parentId": 214,
+  "assets": [
+    {
+      "id": 82227,
+      "title": "Folkets 17. mai-tale fra Oslos vestkant: - Takk for fine damer",
+      "titleFront": null,
+      "description": "VGTV tok turen til Solli plass på Frogner for å la folket fremføre sin egen 17. mai-tale til Norge. Blant tingene folket ønsket å takke landet for, var gratis helsehjelp, fjorder og fjell og sist men ikke minst - fine damer.",
+      "descriptionFront": null,
+      "displays": 29031,
+      "created": 1400346900,
+      "updated": 1400347645,
+      "published": 1400346900,
+      "flightTimes": null,
+      "duration": 110000,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/6788e2ae53dd1922bf29f5b47b619b7e",
+        "front": null
+      },
+      "additional": {}
+    },
+    {
+      "id": 82023,
+      "title": "Dette er opphavet til alle mannskor",
+      "titleFront": null,
+      "description": "Dette er en historie om kameratskap, glede og sorg. Om menn som gjennom sangen finner sammen på tvers av alder og bakgrunn. Karl Johan koret er koret der ingen slutter, men der hver mann synger til naturen sier stopp.\r\n\r\nDette er koret som sammen med Håndverkerne og Studentene urfremførte «Ja vi elsker» i 1864. I år, på grunnlovsjubileet samles de igjen. Samme plass, og samme sang.",
+      "descriptionFront": null,
+      "displays": 3837,
+      "created": 1400334660,
+      "updated": 1400334810,
+      "published": 1400334660,
+      "flightTimes": null,
+      "duration": 504000,
+      "assetType": "video",
+      "status": "active",
+      "series": null,
+      "articleUrl": null,
+      "streamUrls": null,
+      "category": {
+        "id": 1,
+        "title": "Nyheter",
+        "parentId": 214,
+        "isSeries": 0,
+        "order": 0,
+        "stats": null,
+        "additional": null
+      },
+      "images": {
+        "main": "http://imbo.vgtv.no/users/vgtv/images/22c51c3e067a74d04dd99f04b02fa28c",
+        "front": null
+      },
+      "additional": {}
+    }
+  ],
+  "isSeries": 0,
+  "order": 0,
+  "stats": null,
+  "additional": null,
+  "_links": {
+    "self": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/categories/1/assets?limit=2&page=3"
+    },
+    "next": {
+      "href": "http://svp.vg.no/svp/api/v1/vgtv/categories/1/assets?limit=2&page=4"
+    }
+  }
+}
