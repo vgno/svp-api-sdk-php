@@ -16,6 +16,12 @@ return [
                     'type' => 'string',
                     'required' => true,
                 ],
+                'purge' => [
+                    'description' => 'Purge flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
             ]
         ],
         'categories.fetch' => [
@@ -38,6 +44,12 @@ return [
                 ],
                 'additional' => [
                     'description' => 'Additional fields flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+                'purge' => [
+                    'description' => 'Purge flag',
                     'location' => 'query',
                     'type' => 'string',
                     'required' => false,
@@ -272,6 +284,12 @@ return [
                     'type' => 'string',
                     'required' => false,
                 ],
+                'purge' => [
+                    'description' => 'Purge flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
             ]
         ],
 
@@ -295,6 +313,12 @@ return [
                 ],
                 'additional' => [
                     'description' => 'Additional fields flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+                'purge' => [
+                    'description' => 'Purge flag',
                     'location' => 'query',
                     'type' => 'string',
                     'required' => false,

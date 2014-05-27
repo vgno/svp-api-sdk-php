@@ -43,12 +43,13 @@ class Client extends ServiceClient {
     /**
      * Fetch all categories for the client
      *
+     * @param array $defaultOptions
      * @param array $options
      */
-    public function fetchCategories(array $options = []) {
+    public function fetchCategories(array $defaultOptions = [], array $options = []) {
         return $this->runCommand(
             'categories.fetchAll',
-            [],
+            $defaultOptions,
             $options
         );
     }
@@ -57,16 +58,11 @@ class Client extends ServiceClient {
      * Fetch a single category for the client based on $categoryId
      *
      * @param integer $categoryId
-     * @param boolean $additional
+     * @param array $defaultOptions
      * @param array   $options
      */
-    public function fetchCategory($categoryId, $additional = false, array $options = []) {
-        $defaultOptions = ['categoryId' => $categoryId];
-
-        if ($additional) {
-            $defaultOptions['additional'] = 'true';
-        }
-
+    public function fetchCategory($categoryId, array $defaultOptions, array $options = []) {
+        $defaultOptions['categoryId'] = $categoryId;
         return $this->runCommand(
             'categories.fetch',
             $defaultOptions,
@@ -227,10 +223,11 @@ class Client extends ServiceClient {
      * @param integer $limit
      * @param integer $page
      * @param string  $filter
+     * @param array   $defaultOptions
      * @param array   $options
      */
-    public function fetchAssets($limit = null, $page = null, $filter = null, array $options = []) {
-        $defaultOptions = [];
+    public function fetchAssets($limit = null, $page = null, $filter = null,
+            array $defaultOptions = [], array $options = []) {
 
         if ($limit) {
             $defaultOptions['limit'] = $limit;
@@ -255,16 +252,11 @@ class Client extends ServiceClient {
      * Fetch asset based on it's id
      *
      * @param integer $assetId
-     * @param string|null $additional comma-separated additional parameters to be included
+     * @param array $defaultOptions
      * @param array   $options
      */
-    public function fetchAsset($assetId, $additional = null, array $options = []) {
-        $defaultOptions = ['assetId' => $assetId];
-
-        if ($additional) {
-            $defaultOptions['additional'] = $additional;
-        }
-
+    public function fetchAsset($assetId, array $defaultOptions = [], array $options = []) {
+        $defaultOptions['assetId'] = $assetId;
         return $this->runCommand(
             'assets.fetch',
             $defaultOptions,
