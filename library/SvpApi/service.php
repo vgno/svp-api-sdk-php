@@ -182,7 +182,122 @@ return [
                 ],
             ]
         ],
-
+        'seasons.fetchAll' => [
+            'httpMethod' => 'GET',
+            'uri' => '{provider}/categories/{categoryId}/seasons',
+            'summary' => 'Get collection of seasons for given category',
+            'responseClass' => 'SvpApi\Collection\Seasons',
+            'parameters' => [
+                'provider' => [
+                    'description' => 'Data provider',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                'categoryId' => [
+                    'description' => 'Category id',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                'purge' => [
+                    'description' => 'Purge flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+            ]
+        ],
+        'seasons.fetch' => [
+            'httpMethod' => 'GET',
+            'uri' => '{provider}/categories/{categoryId}/seasons/{seasonNumber}',
+            'summary' => 'Get specific season data',
+            'responseClass' => 'SvpApi\Entity\Seasons',
+            'parameters' => [
+                'provider' => [
+                    'description' => 'Data provider',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                'categoryId' => [
+                    'description' => 'Id of category',
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'seasonNumber' => [
+                    'description' => 'Season number',
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'purge' => [
+                    'description' => 'Purge flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+            ]
+        ],
+        'seasons.create' => [
+            'httpMethod' => 'POST',
+            'uri' => '{provider}/categories/{categoryId}/seasons',
+            'summary' => 'Creates and returns season data',
+            'responseClass' => 'SvpApi\Entity\Seasons',
+            'parameters' => [
+                'provider' => [
+                    'description' => 'Data provider',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                'categoryId' => [
+                    'description' => 'Id of category',
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'title' => [
+                    'description' => 'Season title',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ]
+        ],
+        'seasons.update' => [
+            'httpMethod' => 'PATCH',
+            'uri' => '{provider}/categories/{categoryId}/seasons/{seasonNumber}',
+            'summary' => 'Updates and returns season data',
+            'responseClass' => 'SvpApi\Entity\Seasons',
+            'parameters' => [
+                'provider' => [
+                    'description' => 'Data provider',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                'categoryId' => [
+                    'description' => 'Id of category',
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'seasonNumber' => [
+                    'description' => 'Season number',
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                'title' => [
+                    'description' => 'Season title',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ]
+        ],
         'mostSeen' => [
             'httpMethod' => 'GET',
             'uri' => '{provider}/assets/most-seen',

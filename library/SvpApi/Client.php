@@ -265,6 +265,72 @@ class Client extends ServiceClient {
     }
 
     /**
+     * Fetch seasons for given category
+     *
+     * @param integer $categoryId
+     * @param array $defaultOptions
+     * @param array $options
+     */
+    public function fetchSeasons($categoryId, array $defaultOptions = [], array $options = []) {
+        $defaultOptions['categoryId'] = $categoryId;
+        return $this->runCommand(
+            'seasons.fetchAll',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
+     * Fetch a single season for given category based on it's serial number
+     *
+     * @param integer $categoryId
+     * @param integer $seasonNumber
+     * @param array $defaultOptions
+     * @param array   $options
+     */
+    public function fetchSeason($categoryId, $seasonNumber, array $defaultOptions, array $options = []) {
+        $defaultOptions['categoryId'] = $categoryId;
+        $defaultOptions['seasonNumber'] = (int) $seasonNumber;
+        return $this->runCommand(
+            'seasons.fetch',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
+     * Create a season for given category
+     *
+     * @param integer $categoryId
+     * @param array $defaultOptions
+     * @param array   $options
+     */
+    public function createSeason($categoryId, array $defaultOptions, array $options = []) {
+        $defaultOptions['categoryId'] = $categoryId;
+        return $this->runCommand(
+            'seasons.create',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
+     * Update a single season given category
+     *
+     * @param integer $categoryId
+     * @param array $defaultOptions
+     * @param array   $options
+     */
+    public function updateSeason($categoryId, array $defaultOptions, array $options = []) {
+        $defaultOptions['categoryId'] = $categoryId;
+        return $this->runCommand(
+            'seasons.update',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
      * Factory method to create a new client.
      *
      * @param  array|Collection $config Configuration data
