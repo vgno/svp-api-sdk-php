@@ -88,6 +88,12 @@ class Assets extends EntityAbstract {
      */
     protected $assetType = 'video';
     /**
+     * Stream type
+     *
+     * @var string
+     */
+    protected $streamType;
+    /**
      * Status
      *
      * @var string
@@ -410,6 +416,24 @@ class Assets extends EntityAbstract {
      */
     public function getAssetType() {
         return $this->assetType;
+    }
+
+    /**
+     * Get stream type
+     *
+     * @param string $streamType
+     */
+    public function setStreamType($streamType) {
+        $this->streamType = $streamType;
+    }
+
+    /**
+     * Set stream type
+     *
+     * @return string
+     */
+    public function getStreamType() {
+        return $this->streamType;
     }
     /**
      * Get created.

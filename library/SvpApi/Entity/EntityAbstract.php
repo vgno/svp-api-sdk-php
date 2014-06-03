@@ -103,7 +103,8 @@ abstract class EntityAbstract implements \JsonSerializable, ResponseClassInterfa
      * @return self
      */
     public static function fromCommand(OperationCommand $command) {
-        if ($command->getResponse()->getStatusCode() == 200) {
+        $responseStatusCode = $command->getResponse()->getStatusCode();
+        if (in_array($responseStatusCode, [200, 201])) {
             try {
                 $response = $command->getResponse()->json();
             } catch (RuntimeException $e) {
