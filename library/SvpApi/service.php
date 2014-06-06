@@ -92,6 +92,12 @@ return [
                     'type' => 'integer',
                     'required' => true,
                 ],
+                'stats' => [
+                    'description' => 'Xiti stats field',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ],
                 'additional' => [
                     'description' => 'Additional data container',
                     'location' => 'json',
@@ -147,6 +153,12 @@ return [
                     'location' => 'json',
                     'type' => 'integer',
                     'required' => true,
+                ],
+                'stats' => [
+                    'description' => 'Xiti stats field',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
                 ],
                 'additional' => [
                     'description' => 'Additional data container',

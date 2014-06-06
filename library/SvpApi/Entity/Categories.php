@@ -46,6 +46,12 @@ class Categories extends EntityAbstract {
      */
     protected $order;
     /**
+     * Xiti stats
+     *
+     * @var string
+     */
+    protected $stats;
+    /**
      * additional data
      *
      * @var SvpApi\Entity\Categories\Additional
@@ -184,5 +190,23 @@ class Categories extends EntityAbstract {
      */
     public function setShowCategory($showCategory) {
         $this->showCategory = $showCategory;
+    }
+
+    /**
+     * Get stats.
+     *
+     * @return stats.
+     */
+    public function getStats() {
+        return $this->stats;
+    }
+
+    /**
+     * Set stats.
+     *
+     * @param stats the value to set.
+     */
+    public function setStats($stats) {
+        $this->stats = $stats;
     }
 }
