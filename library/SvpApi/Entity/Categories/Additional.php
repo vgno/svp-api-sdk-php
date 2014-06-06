@@ -50,10 +50,6 @@ class Additional extends EntityAbstract {
      */
     protected $showEndPoster;
     /**
-     * @var integer $showCategory
-     */
-    protected $showCategory;
-    /**
      * @var integer $showComments
      */
     protected $showComments;

@@ -98,6 +98,12 @@ return [
                     'type' => 'object',
                     'required' => false,
                 ],
+                'showCategory' => [
+                    'description' => 'Whether to show category',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
             ]
         ],
         'categories.update' => [
@@ -147,6 +153,12 @@ return [
                     'location' => 'json',
                     'type' => 'object',
                     'required' => false,
+                ],
+                'showCategory' => [
+                    'description' => 'Whether to show category',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => true,
                 ],
             ]
         ],

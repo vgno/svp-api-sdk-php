@@ -51,6 +51,10 @@ class Categories extends EntityAbstract {
      * @var SvpApi\Entity\Categories\Additional
      */
     protected $additional;
+    /**
+     * @var integer $showCategory
+     */
+    protected $showCategory;
 
     /**
      * Set ID
@@ -162,5 +166,23 @@ class Categories extends EntityAbstract {
      */
     public function getAdditional() {
         return $this->additional;
+    }
+
+    /**
+     * Get showCategory.
+     *
+     * @return showCategory.
+     */
+    public function getShowCategory() {
+        return $this->showCategory;
+    }
+
+    /**
+     * Set showCategory.
+     *
+     * @param showCategory the value to set.
+     */
+    public function setShowCategory($showCategory) {
+        $this->showCategory = $showCategory;
     }
 }
