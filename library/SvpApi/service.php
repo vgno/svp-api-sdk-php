@@ -516,7 +516,7 @@ return [
                 'showDisplays' => [
                     'description' => 'Whether or not to show displays',
                     'location' => 'json',
-                    'type' => 'integer',
+                    'type' => 'boolean',
                     'required' => false,
                 ],
                 'created' => [
@@ -650,7 +650,7 @@ return [
                 'showDisplays' => [
                     'description' => 'Whether or not to show displays',
                     'location' => 'json',
-                    'type' => 'integer',
+                    'type' => 'boolean',
                     'required' => false,
                 ],
                 'descriptionFront' => [
