@@ -33,6 +33,12 @@ class Settings extends EntityAbstract {
      */
     protected $showComments;
     /**
+     * Flag indicating whether content was registered in TONO,
+     *
+     * @var boolean
+     */
+    protected $tonoRegistered;
+    /**
      * The user who created the asset
      *
      * @var string
