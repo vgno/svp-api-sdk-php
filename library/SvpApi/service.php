@@ -507,6 +507,18 @@ return [
                     'type' => 'string',
                     'required' => false,
                 ],
+                'displays' => [
+                    'description' => 'Number of displays',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => false,
+                ],
+                'showDisplays' => [
+                    'description' => 'Whether or not to show displays',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => false,
+                ],
                 'created' => [
                     'description' => 'Created timestamp',
                     'location' => 'json',
@@ -627,6 +639,18 @@ return [
                     'description' => 'Asset description',
                     'location' => 'json',
                     'type' => 'string',
+                    'required' => false,
+                ],
+                'displays' => [
+                    'description' => 'Number of displays',
+                    'location' => 'json',
+                    'type' => 'integer',
+                    'required' => false,
+                ],
+                'showDisplays' => [
+                    'description' => 'Whether or not to show displays',
+                    'location' => 'json',
+                    'type' => 'integer',
                     'required' => false,
                 ],
                 'descriptionFront' => [

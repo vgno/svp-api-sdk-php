@@ -52,6 +52,12 @@ class Assets extends EntityAbstract {
      */
     protected $displays;
     /**
+     * Whether or not to show displays
+     *
+     * @var boolean
+     */
+    protected $showDisplays;
+    /**
      * Created timestamp
      *
      * @var integer
@@ -498,5 +504,23 @@ class Assets extends EntityAbstract {
      */
     public function setSeries($series) {
         $this->series = new Series($series);
+    }
+
+    /**
+     * Get showDisplays.
+     *
+     * @return boolean
+     */
+    public function getShowDisplays() {
+        return $this->showDisplays;
+    }
+
+    /**
+     * Set showDisplays.
+     *
+     * @param boolean $showDisplays the value to set.
+     */
+    public function setShowDisplays($showDisplays) {
+        $this->showDisplays = $showDisplays;
     }
 }

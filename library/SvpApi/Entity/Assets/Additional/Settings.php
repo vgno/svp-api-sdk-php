@@ -20,4 +20,40 @@ class Settings extends EntityAbstract {
      * @var boolean
      */
     protected $showAds;
+    /**
+     * Whether or not to show embed code
+     *
+     * @var boolean
+     */
+    protected $showEmbed;
+    /**
+     * Whether or not to show comments
+     *
+     * @var boolean
+     */
+    protected $showComments;
+    /**
+     * The user who created the asset
+     *
+     * @var string
+     */
+    protected $createdBy;
+    /**
+     * The user who modified an asset as the last one
+     *
+     * @var string
+     */
+    protected $lastEditedBy;
+    /**
+     * The source of an asset
+     *
+     * @var integer
+     */
+    protected $source;
+    /**
+     * notes - internal stuff
+     *
+     * @var string
+     */
+    protected $notes;
 }
