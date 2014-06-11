@@ -390,6 +390,12 @@ return [
                     'type' => 'string',
                     'required' => false,
                 ],
+                'additional' => [
+                    'description' => 'Additional flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
             ]
         ],
 
@@ -425,6 +431,12 @@ return [
                 ],
                 'purge' => [
                     'description' => 'Purge flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+                'additional' => [
+                    'description' => 'Additional flag',
                     'location' => 'query',
                     'type' => 'string',
                     'required' => false,

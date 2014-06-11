@@ -195,8 +195,9 @@ class Client extends ServiceClient {
      * @param filter $filter
      * @param array   $options
      */
-    public function search($query, $limit = null, $page = null, $filter = null, array $options = []) {
-        $defaultOptions = ['query' => $query];
+    public function search($query, $limit = null, $page = null, $filter = null,
+             array $defaultOptions, array $options = []) {
+        $defaultOptions['query'] = $query;
 
         if ($limit) {
             $defaultOptions['limit'] = $limit;
