@@ -493,7 +493,7 @@ return [
                     'description' => 'Id of an asset',
                     'location' => 'json',
                     'type' => 'integer',
-                    'required' => true,
+                    'required' => false,
                 ],
                 'title' => [
                     'description' => 'Asset title',
