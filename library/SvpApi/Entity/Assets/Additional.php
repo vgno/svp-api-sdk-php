@@ -30,6 +30,10 @@ class Additional extends EntityAbstract {
      */
     protected $chapters;
     /**
+     * @var \SvpApi\Entity\Assets\Additional\CuePoints $cuePoints
+     */
+    protected $cuePoints;
+    /**
      * Override the constructor
      *
      * @override parent::__construct()
