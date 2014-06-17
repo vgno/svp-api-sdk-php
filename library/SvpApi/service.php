@@ -568,7 +568,7 @@ return [
                     'required' => false,
                 ],
                 'streamType' => [
-                    'description' => 'Type of the stream (video|audio)',
+                    'description' => 'Type of the stream (vod|live|wasLive)',
                     'location' => 'json',
                     'type' => 'string',
                     'required' => false,
@@ -703,6 +703,12 @@ return [
                 ],
                 'assetType' => [
                     'description' => 'Type of the asset (video|audio)',
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+                'streamType' => [
+                    'description' => 'Type of the stream (vod|live|wasLive)',
                     'location' => 'json',
                     'type' => 'string',
                     'required' => false,
