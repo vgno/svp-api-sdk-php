@@ -60,7 +60,6 @@ class Categories extends AbstractCollection {
                     $element['children'] = $children;
                 }
                 $branch[$element['id']] = $element;
-                unset($elements[$element['id']]);
             }
         }
         return $branch;
