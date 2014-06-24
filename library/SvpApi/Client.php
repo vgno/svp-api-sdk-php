@@ -192,11 +192,14 @@ class Client extends ServiceClient {
      * @param string  $query
      * @param integer $limit
      * @param integer $page
-     * @param filter $filter
+     * @param string  $filter
+     * @param array   $dateRestrictions
+     * @param array   $defaultOptions
      * @param array   $options
      */
-    public function search($query, $limit = null, $page = null, $filter = null,
-             array $defaultOptions, array $options = []) {
+    public function search($query, $limit = null, $page = null, $filter = '',
+             array $dateRestrictions = [], array $defaultOptions, array $options = []) {
+
         $defaultOptions['query'] = $query;
 
         if ($limit) {
@@ -211,6 +214,8 @@ class Client extends ServiceClient {
             $defaultOptions['filter'] = $filter;
         }
 
+        $defaultOptions += $dateRestrictions;
+
         return $this->runCommand(
             'search',
             $defaultOptions,
@@ -224,11 +229,12 @@ class Client extends ServiceClient {
      * @param integer $limit
      * @param integer $page
      * @param string  $filter
+     * @param array   $dateRestrictions
      * @param array   $defaultOptions
      * @param array   $options
      */
-    public function fetchAssets($limit = null, $page = null, $filter = null,
-            array $defaultOptions = [], array $options = []) {
+    public function fetchAssets($limit = null, $page = null, $filter = '',
+        array $dateRestrictions = [], array $defaultOptions = [], array $options = []) {
 
         if ($limit) {
             $defaultOptions['limit'] = $limit;
@@ -241,6 +247,8 @@ class Client extends ServiceClient {
         if ($filter) {
             $defaultOptions['filter'] = $filter;
         }
+
+        $defaultOptions += $dateRestrictions;
 
         return $this->runCommand(
             'assets.fetchAll',

@@ -396,6 +396,18 @@ return [
                     'type' => 'string',
                     'required' => false,
                 ],
+                'before' => [
+                    'description' => 'Before timestamp',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+                'after' => [
+                    'description' => 'After timestamp',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
             ]
         ],
 
@@ -437,6 +449,18 @@ return [
                 ],
                 'additional' => [
                     'description' => 'Additional flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+                'before' => [
+                    'description' => 'Before timestamp',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+                'after' => [
+                    'description' => 'After timestamp',
                     'location' => 'query',
                     'type' => 'string',
                     'required' => false,
