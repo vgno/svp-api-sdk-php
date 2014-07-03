@@ -34,6 +34,10 @@ class Additional extends EntityAbstract {
      */
     protected $cuePoints;
     /**
+     * @var integer $vgCategory
+     */
+    protected $vgCategory;
+    /**
      * Override the constructor
      *
      * @override parent::__construct()
