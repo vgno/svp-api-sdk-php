@@ -407,7 +407,7 @@ class Client extends ServiceClient {
         /* Add authentication headers for all HTTP methods except for GET */
         if ($command->getOperation()->getHttpMethod() !== 'GET') {
             if (!$this->getConfig('publicKey') || !$this->getConfig('privateKey')) {
-                throw new Exception('Both publicKey and privateKey config values must be set to perform write operations.');
+                throw new \Exception('Both publicKey and privateKey config values must be set to perform write operations.');
             }
             $client = $command->getClient();
             $client->setDefaultOption('headers/X-SvpApiAuth-PublicKey', $this->getConfig('publicKey'));
