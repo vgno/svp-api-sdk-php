@@ -87,6 +87,20 @@ class Client extends ServiceClient {
     }
 
     /**
+     * Fetch all editorial groups
+     *
+     * @param array $defaultOptions
+     * @param array $options
+     */
+    public function fetchEditorial(array $defaultOptions = [], array $options = []) {
+        return $this->runCommand(
+            'editorial.fetchAll',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
      * Create an asset based on $assetData
      *
      * @param array $assetData array containing asset data

@@ -4,6 +4,26 @@ return [
     'apiVersion' => '1',
     'description' => 'PHP client for the Schibsted Video Platform API',
     'operations' => [
+        'editorial.fetchAll' => [
+            'httpMethod' => 'GET',
+            'uri' => '{provider}/editorial',
+            'summary' => 'Get collection of editorial groups',
+            'responseClass' => 'SvpApi\Collection\Editorial',
+            'parameters' => [
+                'provider' => [
+                    'description' => 'Data provider',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                'purge' => [
+                    'description' => 'Purge flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+            ]
+        ],
         'categories.fetchAll' => [
             'httpMethod' => 'GET',
             'uri' => '{provider}/categories',
