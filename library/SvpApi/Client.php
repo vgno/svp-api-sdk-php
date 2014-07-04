@@ -92,9 +92,25 @@ class Client extends ServiceClient {
      * @param array $defaultOptions
      * @param array $options
      */
-    public function fetchEditorial(array $defaultOptions = [], array $options = []) {
+    public function fetchEditorialGroupsCollection(array $defaultOptions = [], array $options = []) {
         return $this->runCommand(
             'editorial.fetchAll',
+            $defaultOptions,
+            $options
+        );
+    }
+
+    /**
+     * Fetch a single editorial group with associated assets
+     *
+     * @param integer $categoryId
+     * @param array $defaultOptions
+     * @param array $options
+     */
+    public function fetchEditorialGroup($groupId, array $defaultOptions, array $options = []) {
+        $defaultOptions['groupId'] = $groupId;
+        return $this->runCommand(
+            'editorial.fetch',
             $defaultOptions,
             $options
         );

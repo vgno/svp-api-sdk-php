@@ -24,6 +24,32 @@ return [
                 ],
             ]
         ],
+        'editorial.fetch' => [
+            'httpMethod' => 'GET',
+            'uri' => '{provider}/editorial/{groupId}/assets',
+            'summary' => 'Get editorial group with associated assets collection',
+            'responseClass' => 'SvpApi\Entity\Editorial',
+            'parameters' => [
+                'provider' => [
+                    'description' => 'Data provider',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                'groupId' => [
+                    'description' => 'editorial group id',
+                    'location' => 'uri',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                'purge' => [
+                    'description' => 'Purge flag',
+                    'location' => 'query',
+                    'type' => 'string',
+                    'required' => false,
+                ],
+            ]
+        ],
         'categories.fetchAll' => [
             'httpMethod' => 'GET',
             'uri' => '{provider}/categories',
