@@ -38,6 +38,18 @@ class Additional extends EntityAbstract {
      */
     protected $vgCategory;
     /**
+     * External ID of an asset
+     *
+     * @var string
+     */
+    protected $externalId;
+    /**
+     * Caption of an asset's image
+     *
+     * @var \SvpApi\Entity\Assets\Additional\ImageCaption 
+     */
+    protected $imageCaption;
+    /**
      * Override the constructor
      *
      * @override parent::__construct()
