@@ -62,4 +62,10 @@ class Settings extends EntityAbstract {
      * @var string
      */
     protected $notes;
+    /**
+     * Indicates position of playback (seconds)
+     *
+     * @var integer
+     */
+    protected $playhead;
 }
