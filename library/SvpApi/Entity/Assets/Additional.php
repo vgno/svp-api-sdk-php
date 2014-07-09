@@ -36,7 +36,7 @@ class Additional extends EntityAbstract {
     /**
      * @var integer $vgCategory
      */
-    protected $vgCategory;
+    protected $vgCategoryId;
     /**
      * External ID of an asset
      *
