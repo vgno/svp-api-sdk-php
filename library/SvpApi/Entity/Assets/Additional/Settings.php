@@ -63,6 +63,12 @@ class Settings extends EntityAbstract {
      */
     protected $notes;
     /**
+     * Indicates whether to show an asset on the newest list
+     *
+     * @var boolean
+     */
+    protected $showInNewest;
+    /**
      * Indicates position of playback (seconds)
      *
      * @var integer
