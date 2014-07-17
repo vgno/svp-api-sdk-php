@@ -544,6 +544,12 @@ return [
                     'type' => 'string',
                     'required' => false,
                 ],
+                'cb' => [
+                    'description' => 'Cachebreaker',
+                    'location' => 'query',
+                    'type' => 'integer',
+                    'required' => false,
+                ],
             ]
         ],
 
