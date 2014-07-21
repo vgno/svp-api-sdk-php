@@ -62,6 +62,10 @@ class Additional extends EntityAbstract {
      */
     protected $playerBranding;
     /**
+     * @var string $adCampaignId
+     */
+    protected $adCampaignId;
+    /**
      * Override the constructor
      *
      * @override parent::__construct()
