@@ -58,7 +58,7 @@ class Categories extends EntityAbstract {
      */
     protected $additional;
     /**
-     * @var integer $showCategory
+     * @var boolean $showCategory
      */
     protected $showCategory;
 

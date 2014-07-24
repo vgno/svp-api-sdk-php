@@ -153,7 +153,7 @@ return [
                 'showCategory' => [
                     'description' => 'Whether to show category',
                     'location' => 'json',
-                    'type' => 'integer',
+                    'type' => 'boolean',
                     'required' => true,
                 ],
             ]
@@ -215,7 +215,7 @@ return [
                 'showCategory' => [
                     'description' => 'Whether to show category',
                     'location' => 'json',
-                    'type' => 'integer',
+                    'type' => 'boolean',
                     'required' => true,
                 ],
             ]
