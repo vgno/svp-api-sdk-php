@@ -27,6 +27,30 @@ class Images extends EntityAbstract {
      * @var string
      */
     protected $front;
+    /**
+     * Featured image url
+     *
+     * @var string
+     */
+    protected $featured;
+
+    /**
+     * Set featured image url
+     *
+     * @param string $featured
+     */
+    public function setFeatured($featured) {
+        $this->featured = $featured;
+    }
+
+    /**
+     * Get featured image url
+     *
+     * @return string
+     */
+    public function getFeatured() {
+        return $this->featured;
+    }
 
     /**
      * Set front image url
