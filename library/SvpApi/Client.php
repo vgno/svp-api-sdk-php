@@ -24,7 +24,7 @@ class Client extends ServiceClient {
      *
      * @var string
      */
-    const API_URL = 'http://svp.vg.no/svp/api';
+    const API_URL = 'https://svp.vg.no/svp/api';
 
     /**
      * API version
